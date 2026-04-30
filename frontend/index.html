@@ -109,8 +109,8 @@
             <button onclick="startFormalFlow()" class="md:w-1/3 py-6 bg-amber-500 text-white text-xl font-bold rounded-3xl shadow-xl hover:bg-amber-600 transition-all">
               立即开启博物馆之旅
             </button>
-            <button id="view-my-plan-btn" onclick="showSavedPlan()" class="hidden md:w-1/3 py-6 bg-white border-2 border-amber-500 text-amber-600 text-xl font-bold rounded-3xl shadow-lg hover:bg-amber-50 transition-all flex items-center justify-center gap-2">
-              <i class="fa-solid fa-map-location-dot"></i> 查看我已有的游览计划
+            <button id="view-my-plan-btn" onclick="showMyPlans()" class="hidden md:w-1/3 py-6 bg-white border-2 border-amber-500 text-amber-600 text-xl font-bold rounded-3xl shadow-lg hover:bg-amber-50 transition-all flex items-center justify-center gap-2">
+              <i class="fa-solid fa-map-location-dot"></i> 我的游览计划
             </button>
             <div class="md:w-1/3 bg-white border border-zinc-200 rounded-3xl p-6 flex flex-col items-center justify-center gap-4 shadow-sm hover:border-amber-400 transition">
                <button onclick="window.open('ar-demo.html', '_blank')" class="w-full py-4 bg-amber-50 border border-amber-500 text-amber-600 font-bold rounded-2xl shadow-sm hover:bg-amber-500 hover:text-white transition-all flex items-center justify-center gap-2">
@@ -120,40 +120,154 @@
           </div>
         </div>
 
-        <div id="saved-plan-panel" class="hidden animate-in zoom-in duration-300">
+        <!-- 我的游览计划面板（新版） -->
+        <div id="my-plans-panel" class="hidden animate-in zoom-in duration-300">
+          <div class="bg-white rounded-3xl p-8 border border-zinc-200 shadow-2xl max-w-3xl mx-auto">
+            <div class="flex items-center justify-between mb-8">
+              <h3 class="text-3xl font-bold text-zinc-900 flex items-center gap-3">
+                <i class="fa-solid fa-map-location-dot text-amber-500"></i> 我的游览计划
+              </h3>
+              <button onclick="backToVisitorHub()" class="text-zinc-500 hover:text-zinc-900 transition">
+                <i class="fa-solid fa-xmark text-2xl"></i>
+              </button>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+              <!-- 未参观计划 -->
+              <div onclick="showUncompletedPlan()" id="uncompleted-plan-card"
+                   class="bg-white border-2 border-amber-200 hover:border-amber-500 rounded-3xl p-8 cursor-pointer transition-all hover:shadow-xl">
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-3xl">📍</div>
+                  <div>
+                    <p class="text-amber-600 font-bold text-sm">未完成</p>
+                    <p class="text-xl font-bold text-zinc-900">我的当前计划</p>
+                  </div>
+                </div>
+                <div id="uncompleted-summary" class="space-y-4 text-sm">
+                  <!-- JS动态填充 -->
+                </div>
+                <div class="mt-8 pt-6 border-t border-zinc-100 text-center">
+                  <span class="text-amber-600 font-medium flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-arrow-right"></i> 查看详细计划并继续
+                  </span>
+                </div>
+              </div>
+
+              <!-- 已参观完成 -->
+              <div onclick="showCompletedPlans()" id="completed-plan-card"
+                   class="bg-white border-2 border-emerald-200 hover:border-emerald-500 rounded-3xl p-8 cursor-pointer transition-all hover:shadow-xl">
+                <div class="flex items-center gap-4 mb-6">
+                  <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-3xl">✅</div>
+                  <div>
+                    <p class="text-emerald-600 font-bold text-sm">已完成</p>
+                    <p class="text-xl font-bold text-zinc-900">参观记录</p>
+                  </div>
+                </div>
+                <div class="text-zinc-500 text-sm leading-relaxed mb-8">
+                  查看上次游览计划<br>
+                  下载AR云端截图<br>
+                  生成AI共创纪念视频
+                </div>
+                <div class="mt-8 pt-6 border-t border-zinc-100 text-center">
+                  <span class="text-emerald-600 font-medium flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-arrow-right"></i> 查看记录与纪念内容
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 未完成计划详情 -->
+        <div id="uncompleted-plan-detail" class="hidden animate-in zoom-in duration-300">
           <div class="bg-white rounded-3xl p-10 border border-zinc-200 shadow-2xl max-w-2xl mx-auto relative overflow-hidden">
-            <div class="absolute top-0 right-0 p-8 opacity-10 text-9xl text-amber-500"><i class="fa-solid fa-quote-right"></i></div>
-            <h3 class="text-3xl font-bold mb-8 text-zinc-900 flex items-center gap-3"><i class="fa-solid fa-clipboard-list text-amber-500"></i> 我的专属游览计划</h3>
+            <button onclick="backToMyPlans()" class="absolute top-6 left-6 text-zinc-400 hover:text-zinc-600">
+              <i class="fa-solid fa-arrow-left text-xl"></i>
+            </button>
+            
+            <h3 class="text-3xl font-bold mb-8 text-zinc-900 flex items-center gap-3">
+              <i class="fa-solid fa-clipboard-list text-amber-500"></i> 当前游览计划
+            </h3>
             <div class="space-y-6 relative z-10">
               <div class="flex items-start gap-4 p-5 bg-zinc-50 rounded-2xl border border-zinc-100">
                 <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 shrink-0"><i class="fa-solid fa-museum"></i></div>
                 <div>
                   <p class="text-xs text-zinc-400 font-bold uppercase">选定博物馆</p>
-                  <p id="display-museum" class="text-xl font-bold text-zinc-900"></p>
+                  <p id="display-museum-uncompleted" class="text-xl font-bold text-zinc-900"></p>
                 </div>
               </div>
               <div class="flex items-start gap-4 p-5 bg-zinc-50 rounded-2xl border border-zinc-100">
                 <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center text-amber-600 shrink-0"><i class="fa-solid fa-user-astronaut"></i></div>
                 <div>
                   <p class="text-xs text-zinc-400 font-bold uppercase">虚拟导览伙伴</p>
-                  <p id="display-avatar" class="text-xl font-bold text-zinc-900"></p>
+                  <p id="display-avatar-uncompleted" class="text-xl font-bold text-zinc-900"></p>
                 </div>
               </div>
               <div class="flex items-start gap-4 p-5 bg-amber-50 rounded-2xl border border-amber-100">
                 <div class="w-12 h-12 bg-amber-500 rounded-full flex items-center justify-center text-white shrink-0"><i class="fa-solid fa-route"></i></div>
                 <div>
                   <p class="text-xs text-amber-600 font-bold uppercase">定制游览路线</p>
-                  <p id="display-plan" class="text-lg font-bold text-zinc-900 leading-relaxed"></p>
+                  <p id="display-plan-uncompleted" class="text-lg font-bold text-zinc-900 leading-relaxed"></p>
                 </div>
               </div>
               <div class="pt-6 flex gap-4">
-                <button onclick="showStep(0)" class="flex-1 py-4 bg-zinc-900 text-white font-bold rounded-xl hover:bg-black transition shadow-lg">返回工作台</button>
-                <button onclick="window.open('ar-demo.html', '_blank')" class="flex-1 py-4 bg-amber-500 text-white font-bold rounded-xl hover:bg-amber-600 transition shadow-lg">开始游览</button>
+                <button onclick="backToMyPlans()" class="flex-1 py-4 bg-zinc-900 text-white font-bold rounded-xl hover:bg-black transition shadow-lg">返回我的计划</button>
+                <button onclick="window.open('ar-demo.html', '_blank')" class="flex-1 py-4 bg-amber-500 text-white font-bold rounded-xl hover:bg-amber-600 transition shadow-lg">开始/继续游览</button>
               </div>
             </div>
           </div>
         </div>
 
+        <!-- 已完成参观记录面板 -->
+        <div id="completed-plans-panel" class="hidden animate-in zoom-in duration-300">
+          <div class="bg-white rounded-3xl p-10 border border-zinc-200 shadow-2xl max-w-3xl mx-auto">
+            <button onclick="backToMyPlans()" class="mb-6 text-zinc-500 hover:text-zinc-900 flex items-center gap-2">
+              <i class="fa-solid fa-arrow-left"></i> 返回我的计划
+            </button>
+            
+            <h3 class="text-3xl font-bold mb-8 text-zinc-900">已完成游览记录</h3>
+            
+            <div class="space-y-8">
+              <!-- 上次计划 -->
+              <div class="border border-zinc-200 rounded-3xl p-8">
+                <div class="flex justify-between items-start mb-6">
+                  <div>
+                    <p class="text-emerald-600 text-sm font-bold">上次游览</p>
+                    <p id="completed-museum" class="text-2xl font-bold text-zinc-900"></p>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-xs text-zinc-400">完成时间</p>
+                    <p class="text-sm font-medium text-zinc-600">2026.04.29</p>
+                  </div>
+                </div>
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-8">
+                  <div class="bg-zinc-50 p-5 rounded-2xl">
+                    <p class="text-xs text-zinc-400 font-bold mb-2">虚拟导览伙伴</p>
+                    <p id="completed-avatar" class="font-bold text-lg"></p>
+                  </div>
+                  <div class="bg-zinc-50 p-5 rounded-2xl">
+                    <p class="text-xs text-zinc-400 font-bold mb-2">游览路线</p>
+                    <p id="completed-plan" class="text-sm leading-relaxed"></p>
+                  </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                  <button onclick="alert('📸 已打开AR云端截图下载页面')" 
+                          class="flex-1 py-4 bg-white border-2 border-zinc-300 hover:border-zinc-400 text-zinc-700 font-bold rounded-2xl transition flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-download"></i> 下载AR云端截图
+                  </button>
+                  <button onclick="generateMemorialVideo()" 
+                          class="flex-1 py-4 bg-amber-500 text-white font-bold rounded-2xl hover:bg-amber-600 transition flex items-center justify-center gap-3">
+                    <i class="fa-solid fa-wand-sparkles"></i> 生成AI共创纪念视频
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 原有功能详情面板保持不变 -->
         <div id="feature-1-detail" class="hidden animate-in slide-in-from-right duration-300">
           <div class="bg-white rounded-3xl p-10 border border-zinc-200 shadow-lg">
             <h3 class="text-3xl font-bold mb-8 text-amber-600 flex items-center gap-3">
@@ -377,6 +491,7 @@
     </div>
   </div>
 
+  <!-- 博物馆管理员模块保持不变 -->
   <div id="museum-admin-modal" class="hidden fixed inset-0 bg-zinc-50 z-[998] overflow-y-auto text-zinc-900">
     <div class="min-h-screen py-10 px-6">
       <div class="max-w-7xl mx-auto">
@@ -475,7 +590,8 @@
     let selectedMuseum = null;
     let selectedAvatar = null;
     let selectedKeywords = [];
-    let savedPlanData = null; // 用于存储最终生成的计划信息
+    let savedPlanData = null;     // 未完成计划（当前计划）
+    let completedPlanData = null; // 已完成计划（模拟上次已完成的计划）
 
     function openVisitorModule() {
       document.getElementById('visitor-modal').classList.remove('hidden');
@@ -491,20 +607,22 @@
     }
 
     function showStep(step) {
-      const allPanels = ['step-0', 'step-1', 'step-2', 'step-2-5', 'step-3', 'formal-flow', 'feature-1-detail', 'feature-2-detail', 'feature-3-detail', 'saved-plan-panel'];
+      const allPanels = ['step-0', 'step-1', 'step-2', 'step-2-5', 'step-3', 'formal-flow', 'feature-1-detail', 'feature-2-detail', 'feature-3-detail', 'my-plans-panel', 'uncompleted-plan-detail', 'completed-plans-panel'];
       allPanels.forEach(p => document.getElementById(p)?.classList.add('hidden'));
       
       const backBtn = document.getElementById('visitor-back-btn');
       const title = document.getElementById('visitor-title');
 
-      // 更新“查看我已有的游览计划”按钮状态
-      const planBtn = document.getElementById('view-my-plan-btn');
-      if(savedPlanData) planBtn.classList.remove('hidden');
-
       if (step === 0) {
         document.getElementById('step-0').classList.remove('hidden');
         backBtn.classList.add('hidden');
         title.innerText = '趣味功能概览';
+        
+        // 更新“我的游览计划”按钮显示状态
+        const planBtn = document.getElementById('view-my-plan-btn');
+        if (savedPlanData || completedPlanData) {
+          planBtn.classList.remove('hidden');
+        }
       } else {
         backBtn.classList.remove('hidden');
         if (step !== -1) {
@@ -525,7 +643,7 @@
     function showFeatureDetail(id) {
       showStep(-1);
       document.getElementById('feature-' + id + '-detail').classList.remove('hidden');
-      document.getElementById('visitor-title').innerText = '功能详情详情';
+      document.getElementById('visitor-title').innerText = '功能详情';
     }
 
     function startFormalFlow() { showStep(1); }
@@ -618,26 +736,90 @@
         feedback = "标准游览计划已为您生成。";
       }
 
-      // 存储数据
+      // 存储为未完成计划
       savedPlanData = {
-        museum: selectedMuseum.name,
-        avatar: selectedAvatar.name,
+        museum: selectedMuseum ? selectedMuseum.name : "苏州博物馆",
+        avatar: selectedAvatar ? selectedAvatar.name : "评弹小姐姐",
         plan: finalPlanStr
       };
+
+      // 同时模拟生成一个已完成的计划（用于演示已参观状态）
+      if (!completedPlanData) {
+        completedPlanData = {
+          museum: "苏州博物馆",
+          avatar: "伍子胥",
+          plan: "探寻镇馆之宝 + XR深度体验"
+        };
+      }
 
       document.getElementById('plan-feedback-msg').innerText = feedback;
       showStep(3);
     }
 
-    // 新增：展示已存计划功能
-    function showSavedPlan() {
-      if(!savedPlanData) return;
+    // ========== 新增：我的游览计划相关函数 ==========
+
+    function showMyPlans() {
       showStep(-1);
-      document.getElementById('visitor-title').innerText = '我的计划详情';
-      document.getElementById('display-museum').innerText = savedPlanData.museum;
-      document.getElementById('display-avatar').innerText = savedPlanData.avatar;
-      document.getElementById('display-plan').innerText = savedPlanData.plan;
-      document.getElementById('saved-plan-panel').classList.remove('hidden');
+      document.getElementById('visitor-title').innerText = '我的游览计划';
+      document.getElementById('my-plans-panel').classList.remove('hidden');
+      
+      // 渲染未完成计划摘要
+      renderUncompletedSummary();
+    }
+
+    function renderUncompletedSummary() {
+      const container = document.getElementById('uncompleted-summary');
+      if (!savedPlanData) {
+        container.innerHTML = `<p class="text-zinc-400 text-center py-8">暂无进行中的计划</p>`;
+        return;
+      }
+      
+      container.innerHTML = `
+        <div class="flex items-center gap-3">
+          <i class="fa-solid fa-museum text-amber-500"></i>
+          <span class="font-medium">${savedPlanData.museum}</span>
+        </div>
+        <div class="flex items-center gap-3">
+          <i class="fa-solid fa-user-astronaut text-amber-500"></i>
+          <span>${savedPlanData.avatar}</span>
+        </div>
+        <div class="text-amber-600 text-sm line-clamp-2 mt-2">${savedPlanData.plan}</div>
+      `;
+    }
+
+    function showUncompletedPlan() {
+      if (!savedPlanData) return alert("暂无进行中的游览计划");
+      
+      document.getElementById('my-plans-panel').classList.add('hidden');
+      document.getElementById('uncompleted-plan-detail').classList.remove('hidden');
+      document.getElementById('visitor-title').innerText = '当前计划详情';
+      
+      document.getElementById('display-museum-uncompleted').innerText = savedPlanData.museum;
+      document.getElementById('display-avatar-uncompleted').innerText = savedPlanData.avatar;
+      document.getElementById('display-plan-uncompleted').innerText = savedPlanData.plan;
+    }
+
+    function showCompletedPlans() {
+      document.getElementById('my-plans-panel').classList.add('hidden');
+      document.getElementById('completed-plans-panel').classList.remove('hidden');
+      document.getElementById('visitor-title').innerText = '已完成记录';
+      
+      if (completedPlanData) {
+        document.getElementById('completed-museum').innerText = completedPlanData.museum;
+        document.getElementById('completed-avatar').innerText = completedPlanData.avatar;
+        document.getElementById('completed-plan').innerText = completedPlanData.plan;
+      }
+    }
+
+    function backToMyPlans() {
+      document.getElementById('uncompleted-plan-detail').classList.add('hidden');
+      document.getElementById('completed-plans-panel').classList.add('hidden');
+      document.getElementById('my-plans-panel').classList.remove('hidden');
+      document.getElementById('visitor-title').innerText = '我的游览计划';
+    }
+
+    function generateMemorialVideo() {
+      alert("🎬 AI共创纪念视频正在生成中...\n\n（模拟）视频已生成成功！\n您可以在相册中查看精美游览回忆视频。");
     }
 
     function simulateGenerateVideo() {
@@ -672,7 +854,9 @@
       document.getElementById('admin-title').innerText = '后台内容管理系统';
     }
 
-    window.onload = () => { console.log('✅ AI Plan with Storage Loaded.'); };
+    window.onload = () => { 
+      console.log('✅ V-Museum Visitor Module Loaded with Updated Plan System.');
+    };
   </script>
 </body>
 </html>
