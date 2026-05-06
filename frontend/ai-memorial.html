@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 纪念视频生成 | V-Museum 唯博</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap');
+    body { font-family: 'Noto Sans SC', system-ui, sans-serif; }
+  </style>
+</head>
+<body class="bg-zinc-50 text-zinc-900 min-h-screen">
+
+  <nav class="bg-white/95 backdrop-blur-md border-b border-zinc-200 sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3 min-w-0">
+        <i class="fa-solid fa-clapperboard text-2xl text-amber-600 shrink-0"></i>
+        <div class="min-w-0">
+          <p class="text-amber-600 text-xs font-bold uppercase tracking-wide">V-Museum</p>
+          <h1 class="text-lg sm:text-xl font-bold truncate">AI 纪念视频与影像</h1>
+        </div>
+      </div>
+      <a href="index.html" class="shrink-0 text-sm font-bold text-zinc-600 hover:text-amber-600 inline-flex items-center gap-2 px-3 py-2 rounded-xl border border-zinc-200 hover:border-amber-400 transition">
+        <i class="fa-solid fa-arrow-left"></i> 返回上一页
+      </a>
+    </div>
+  </nav>
+
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-10 pb-16">
+    <p class="text-zinc-600 text-sm sm:text-base max-w-2xl leading-relaxed mb-8">
+      此处读取您在参观者工作台中<strong class="text-zinc-800">已标记为完成</strong>的旅程。点选一次旅程后，可下载该次 XR 设备同步至云端的截图包，并一键生成带<strong class="text-amber-700">博物馆水印与馆方视觉风格</strong>的纪念照，以及贴合<strong class="text-amber-700">当下短视频趋势</strong>的纪念成片（演示为前端模拟）。
+    </p>
+
+    <div id="empty-state" class="hidden bg-white rounded-3xl border border-zinc-200 p-12 text-center shadow-sm">
+      <div class="w-16 h-16 bg-zinc-100 rounded-full flex items-center justify-center text-3xl text-zinc-400 mx-auto mb-6">📭</div>
+      <h2 class="text-xl font-bold text-zinc-900 mb-2">还没有已完成的旅程</h2>
+      <p class="text-zinc-500 text-sm mb-8 max-w-md mx-auto">请先在首页打开「参观者工作台」，完成「开始定制 V-Museum 旅程」并在「我的游览计划」中将一次计划标记为已完成。</p>
+      <a href="index.html" class="inline-flex items-center gap-2 px-8 py-4 bg-amber-500 text-white font-bold rounded-2xl hover:bg-amber-600 transition shadow-lg">去定制旅程</a>
+    </div>
+
+    <div id="workspace" class="hidden grid lg:grid-cols-5 gap-8">
+      <div class="lg:col-span-2 space-y-3">
+        <h2 class="text-sm font-bold text-zinc-400 uppercase tracking-wider mb-2">已完成的旅程</h2>
+        <div id="completed-trip-list" class="space-y-3"></div>
+      </div>
+      <div id="detail-panel" class="hidden lg:col-span-3">
+        <div class="bg-white rounded-3xl border border-zinc-200 shadow-xl overflow-hidden">
+          <div class="p-6 sm:p-8 border-b border-zinc-100 flex flex-wrap items-start justify-between gap-4">
+            <div>
+              <p class="text-emerald-600 text-xs font-bold uppercase mb-1">选定旅程</p>
+              <h2 id="detail-museum" class="text-2xl font-bold text-zinc-900"></h2>
+              <p id="detail-meta" class="text-sm text-zinc-500 mt-2"></p>
+            </div>
+            <button type="button" id="btn-close-detail" class="lg:hidden text-sm font-bold text-zinc-500 border border-zinc-200 px-4 py-2 rounded-xl hover:bg-zinc-50">收起</button>
+          </div>
+          <div class="p-6 sm:p-8 space-y-6">
+            <div>
+              <p class="text-xs font-bold text-zinc-400 uppercase mb-2">该次游览路线摘要</p>
+              <p id="detail-plan" class="text-zinc-700 text-sm leading-relaxed bg-zinc-50 rounded-2xl p-4 border border-zinc-100"></p>
+            </div>
+            <div>
+              <p class="text-xs font-bold text-zinc-400 uppercase mb-3">云端 XR 截图预览（示意）</p>
+              <div class="flex gap-3 overflow-x-auto pb-2" id="detail-thumbs"></div>
+            </div>
+            <div class="space-y-4">
+              <button type="button" id="btn-download-xr" class="w-full py-4 bg-white border-2 border-zinc-300 text-zinc-800 font-bold rounded-2xl hover:border-amber-500 hover:bg-amber-50/50 transition flex items-center justify-center gap-3">
+                <i class="fa-solid fa-cloud-arrow-down text-amber-600"></i> 下载云端保存的 XR 设备截图
+              </button>
+              <button type="button" id="btn-memorial-photo" class="w-full py-4 bg-zinc-900 text-white font-bold rounded-2xl hover:bg-black transition flex items-center justify-center gap-3">
+                <i class="fa-solid fa-image text-amber-400"></i> 一键生成馆方水印 / 风格纪念照
+              </button>
+              <button type="button" id="btn-trend-video" class="w-full py-4 bg-amber-500 text-white font-bold rounded-2xl hover:bg-amber-600 transition flex items-center justify-center gap-3 shadow-lg">
+                <i class="fa-solid fa-film"></i> 一键生成趋势风纪念短视频
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    const STORAGE_KEY = 'vMuseumVisitPlans';
+    let completedTrips = [];
+    let activeTrip = null;
+
+    function loadCompleted() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        const all = raw ? JSON.parse(raw) : [];
+        completedTrips = Array.isArray(all) ? all.filter(p => p.completed) : [];
+        completedTrips.sort((a, b) => new Date(b.completedAt || 0) - new Date(a.completedAt || 0));
+      } catch (e) {
+        completedTrips = [];
+      }
+    }
+
+    function escapeHtml(str) {
+      if (str == null) return '';
+      return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+
+    function formatDate(iso) {
+      if (!iso) return '—';
+      try {
+        return new Date(iso).toLocaleString('zh-CN', { dateStyle: 'medium', timeStyle: 'short' });
+      } catch (e) {
+        return '—';
+      }
+    }
+
+    function renderList() {
+      const listEl = document.getElementById('completed-trip-list');
+      listEl.innerHTML = completedTrips.map((p, i) => `
+        <button type="button" data-trip-id="${String(p.id).replace(/"/g, '')}"
+          class="trip-item w-full text-left p-5 rounded-2xl border-2 transition bg-white border-zinc-200 hover:border-amber-400 hover:shadow-md ${activeTrip && activeTrip.id === p.id ? 'ring-2 ring-amber-500 border-amber-500' : ''}">
+          <p class="font-bold text-zinc-900">${escapeHtml(p.museum)}</p>
+          <p class="text-xs text-zinc-500 mt-1 line-clamp-2">${escapeHtml(p.plan || '')}</p>
+          <p class="text-[10px] text-emerald-700 font-medium mt-2">${escapeHtml(formatDate(p.completedAt || p.createdAt))}</p>
+        </button>
+      `).join('');
+
+      listEl.querySelectorAll('.trip-item').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.getAttribute('data-trip-id');
+          const trip = completedTrips.find(t => t.id === id);
+          if (trip) openDetail(trip);
+        });
+      });
+    }
+
+    function openDetail(trip) {
+      activeTrip = trip;
+      document.getElementById('detail-panel').classList.remove('hidden');
+      document.getElementById('detail-museum').textContent = trip.museum || '—';
+      document.getElementById('detail-meta').textContent =
+        `完成于 ${formatDate(trip.completedAt)} · 伙伴 ${trip.avatar || '—'} · 语音 ${trip.voice || '—'}`;
+      document.getElementById('detail-plan').textContent = trip.plan || '（无路线摘要）';
+
+      const seeds = [101, 102, 103, 104];
+      document.getElementById('detail-thumbs').innerHTML = seeds.map((sid, idx) => `
+        <div class="shrink-0 w-28 h-28 rounded-xl overflow-hidden border border-zinc-200 relative">
+          <img src="https://picsum.photos/id/${sid}/200/200" alt="" class="w-full h-full object-cover">
+          <span class="absolute bottom-1 left-1 text-[9px] bg-black/60 text-white px-1.5 py-0.5 rounded">XR ${idx + 1}</span>
+        </div>
+      `).join('');
+
+      renderList();
+      document.getElementById('detail-panel').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function wireActions() {
+      document.getElementById('btn-download-xr').onclick = () => {
+        if (!activeTrip) return;
+        alert('📥 已开始打包下载\n\n' + activeTrip.museum + ' · 该次旅程的 XR 云端截图（ZIP，演示）\n\n实际项目中此处返回真实下载链接。');
+      };
+      document.getElementById('btn-memorial-photo').onclick = () => {
+        if (!activeTrip) return;
+        alert('🖼️ 纪念照生成中（演示）\n\n已套用本馆水印与官方配色模板，输出 9:16 / 1:1 双规格。\n\n旅程：' + activeTrip.museum);
+      };
+      document.getElementById('btn-trend-video').onclick = () => {
+        if (!activeTrip) return;
+        alert('🎬 趋势纪念短视频生成中（演示）\n\n已匹配当下热门结构（开场钩子 + 卡点转场 + 片尾馆标）。\n\n旅程：' + activeTrip.museum);
+      };
+      document.getElementById('btn-close-detail').onclick = () => {
+        activeTrip = null;
+        document.getElementById('detail-panel').classList.add('hidden');
+        renderList();
+      };
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadCompleted();
+      wireActions();
+
+      if (!completedTrips.length) {
+        document.getElementById('empty-state').classList.remove('hidden');
+        return;
+      }
+
+      document.getElementById('workspace').classList.remove('hidden');
+      renderList();
+      openDetail(completedTrips[0]);
+    });
+  </script>
+</body>
+</html>
