@@ -36,11 +36,11 @@
     <span class="hero-badge">Process Portfolio</span>
     <h1>以用户为中心的设计、原型与评估记录</h1>
     <p class="hero-lead">
-      本页面向课程作业提交：展示迭代设计过程、原型对比、评估方法、目标用户数据收集与分析，以及对结果与设计启示的讨论。下方各模块请按小组实际材料替换占位文字与图片路径。
+      V-Museum（唯博）小组过程作品集：记录动机与研究、用户需求、创意与备选方案、技术实现与评估反思；并嵌入背景问卷统计图、概念手稿与界面迭代截图。已部署高保真原型见下方链接。
     </p>
     <div class="hero-actions">
       <a class="btn btn-primary" href="#motivation">从研究开始</a>
-      <a class="btn btn-ghost" href="system/index0501整合.html">打开整合版网页原型</a>
+      <a class="btn btn-ghost" href="https://cpt208v-museum.vercel.app/" target="_blank" rel="noopener noreferrer">打开已部署原型（Vercel）</a>
     </div>
   </div>
 
@@ -53,17 +53,14 @@
       </div>
 
       <div class="subsection prose">
-        <h3>选题缘由（The Why）· 约 200 英文词</h3>
-        <p class="note">请将下列占位段落替换为你们小组的英文陈述（约 200 words），说明为何选择 <strong>Heritage / Social / Active</strong> 中的具体主题（本项目为 <strong>A3 · My Stories in Museums</strong>，属 Heritage 方向）。</p>
-        <p>
-          [Replace this paragraph with your group’s ~200-word rationale in English: why museums + playful onsite/hybrid experience matters for visitors as creators and audience; what gap you address; how it connects to CPT208 learning outcomes.]
+        <h3>选题缘由（The Why）</h3>
+        <p lang="en" style="hyphens:auto;">
+          We chose the Heritage (Digital Heritage &amp; Play) track for A3 — My Stories in Museums because many visits remain linear and passive: visitors struggle to connect objects to personal meaning, while mobile guides rarely close the loop between onsite exploration and a shareable takeaway. Our formative survey work surfaced navigation fatigue, uneven interpretive depth, and limited post-visit reflection, alongside conditional interest in AI and AR when accuracy, privacy, and cognitive load were addressed. V-Museum responds by treating visitors as co-creators of a playful yet accountable heritage encounter, combining mobile-friendly XR cues, goal-driven route planning that makes trade-offs explicit, and AI-assisted commemorative storytelling such as short souvenir-style narratives or videos. We pair the visitor journey with a museum administration workflow so playful features remain institutionally grounded. Culturally resonant narration styles bridge expert interpretation and everyday curiosity, while layered depth supports families, students, and tourists with different time budgets. Finally, we treat playful features as optional, legible, and auditable by educators so digital heritage amplifies museums without displacing curatorial authority, aligning with CPT208 goals on equity, inclusion, and ethical computing. This stance ties personas, journey insights, prototypes, and evaluation to a single argument for responsible play in heritage settings.
         </p>
-        <p class="word-count">当前为占位英文，提交前请删除并写入终稿。</p>
       </div>
 
       <div class="subsection">
         <h3>文献与产品差距（The Gap）</h3>
-        <p class="note">对 4 篇学术论文与 4 个商业产品：各列出 3 条优点与 3 条不足（可用你们文献综述中的真实条目替换表格行）。</p>
         <div class="table-wrap">
           <table>
             <thead>
@@ -120,23 +117,81 @@
       </div>
 
       <div class="subsection">
+        <h3>背景调查：问卷统计与数据可视化</h3>
+        <p class="note">
+          图源：<code>背景调查-博物馆+aixr/调查-统计图/统计图/</code> 及同目录上级补充图表。
+        </p>
+        <div class="gallery-grid survey-gallery">
+          <figure class="gallery-item">
+            <img src="背景调查-博物馆+aixr/01dbc0d42c4b84416c8b9daf2dd0f4f9.png" alt="背景调查补充统计图" loading="lazy" />
+            <figcaption>补充统计图（<code>背景调查-博物馆+aixr/</code>）</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="背景调查-博物馆+aixr/调查-统计图/统计图/痛点.png" alt="用户痛点统计" loading="lazy" />
+            <figcaption>痛点</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="背景调查-博物馆+aixr/调查-统计图/统计图/当前痛点2.png" alt="当前痛点统计 2" loading="lazy" />
+            <figcaption>当前痛点（2）</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="背景调查-博物馆+aixr/调查-统计图/统计图/参观目的.png" alt="参观目的统计" loading="lazy" />
+            <figcaption>参观目的</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="背景调查-博物馆+aixr/调查-统计图/统计图/是否愿意ai+ar辅助观展.png" alt="是否愿意 AI+AR 辅助观展" loading="lazy" />
+            <figcaption>是否愿意 AI+AR 辅助观展</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="背景调查-博物馆+aixr/调查-统计图/统计图/ai辅助方式选择.png" alt="AI 辅助方式选择" loading="lazy" />
+            <figcaption>AI 辅助方式选择</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="背景调查-博物馆+aixr/调查-统计图/统计图/aiar与博物馆结合方式.png" alt="AIAR 与博物馆结合方式" loading="lazy" />
+            <figcaption>AI/AR 与博物馆结合方式</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="背景调查-博物馆+aixr/调查-统计图/统计图/arai担忧.png" alt="对 AR AI 的担忧" loading="lazy" />
+            <figcaption>对 AR/AI 的担忧</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="背景调查-博物馆+aixr/调查-统计图/统计图/边缘设备选择.png" alt="边缘设备选择" loading="lazy" />
+            <figcaption>边缘设备选择</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="背景调查-博物馆+aixr/调查-统计图/统计图/Code_Generated_Image.png" alt="生成图表 1" loading="lazy" />
+            <figcaption>Code_Generated_Image（AI 辅助出图时需在参考文献中注明工具与用途）</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="背景调查-博物馆+aixr/调查-统计图/统计图/Code_Generated_Image1.png" alt="生成图表 2" loading="lazy" />
+            <figcaption>Code_Generated_Image1</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="背景调查-博物馆+aixr/调查-统计图/统计图/Code_Generated_Image2.png" alt="生成图表 3" loading="lazy" />
+            <figcaption>Code_Generated_Image2</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="subsection">
         <h3>利益相关者与人物角色（The Stakeholders）</h3>
+        <p class="note">Case 轴线：参观者主路径 ↔ 馆方后台（Museum Admin Center）。</p>
         <div class="grid-2">
           <article class="card">
             <p class="persona-tag">主要用户 Primary</p>
-            <h4 class="persona-name">[人物姓名代号]</h4>
-            <p><strong>目标：</strong>…</p>
-            <p><strong>场景：</strong>…</p>
-            <p><strong>痛点：</strong>…</p>
-            <p><strong>对「趣味性」的期待：</strong>…</p>
+            <h4 class="persona-name">林晓 · 博物馆参观者（内容体验者）</h4>
+            <p><strong>目标：</strong>在有限时间内理解展线、减少迷路与信息过载，并把参观变成可讲述的个人故事；愿意尝试轻量 XR / AI 辅助，但要求流程清晰、可控退出。</p>
+            <p><strong>场景：</strong>周末与朋友到综合类博物馆，携带手机；入场前想快速规划路线，参观中需要空间引导与趣味提示，离场希望有「可分享」的纪念产出。</p>
+            <p><strong>痛点：</strong>展签信息密度不均、路线缺乏个性化、观展后记忆点分散；对 AI 讲解存在「是否可信、是否打扰他人」的顾虑。</p>
+            <p><strong>对「趣味性」的期待：</strong>能通过目标化路线（如更沉浸 / 更省时）做轻量「玩法」选择；现场有探索感的小任务或反馈；结束时有情绪化、可定制的叙事或影像总结。</p>
           </article>
           <article class="card">
             <p class="persona-tag">次要用户 Secondary</p>
-            <h4 class="persona-name">[人物姓名代号]</h4>
-            <p><strong>目标：</strong>…</p>
-            <p><strong>场景：</strong>…</p>
-            <p><strong>痛点：</strong>…</p>
-            <p><strong>与系统的关系：</strong>…</p>
+            <h4 class="persona-name">周岚 · 馆方数字运营 / 教育专员</h4>
+            <p><strong>目标：</strong>维护展品与数字内容的一致性，配置适合本馆 tone 的讲解与活动信息，监测游客端体验是否偏离策展意图。</p>
+            <p><strong>场景：</strong>在「馆方后台 / Museum Admin Center」更新展项、审核对外话术与素材，临展期间频繁调整路线与资源位。</p>
+            <p><strong>痛点：</strong>多入口工具分散、游客端与后台信息不同步、AI 生成内容需额外校对成本。</p>
+            <p><strong>与系统的关系：</strong>为参观者端提供可信内容与策略边界；与 V-Museum 参观者动线成对出现，保证「趣味」不牺牲馆方责任与伦理边界。</p>
           </article>
         </div>
       </div>
@@ -150,28 +205,55 @@
       </div>
 
       <div class="subsection">
-        <h3>用户旅程图（User Journey Map）</h3>
-        <p class="note">将导出的旅程图图片放到 <code>assets/journey-map.png</code>（或修改下方 <code>src</code>），并标注关键痛点阶段。</p>
-        <figure class="figure">
-          <div class="media-slot" style="aspect-ratio: 16/9; max-height: 420px;">
-            <span>若已放置图片则替换此区域为 &lt;img src="assets/journey-map.png" alt="用户旅程图" /&gt;</span>
-          </div>
-          <figcaption>当前为占位：请嵌入含痛点标注的旅程图。</figcaption>
-        </figure>
+        <h3>用户旅程图与痛点（User Journey Map）</h3>
+        <p class="note">下列为问卷中的痛点维度可视化，可与独立绘制的旅程图并列使用。</p>
+        <div class="gallery-grid survey-gallery">
+          <figure class="gallery-item">
+            <img src="背景调查-博物馆+aixr/调查-统计图/统计图/痛点.png" alt="问卷：观展痛点分布" loading="lazy" />
+            <figcaption>痛点分布（支撑旅程中的「受挫/信息不足」等阶段）</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="背景调查-博物馆+aixr/调查-统计图/统计图/当前痛点2.png" alt="问卷：当前痛点 2" loading="lazy" />
+            <figcaption>当前痛点（补充维度）</figcaption>
+          </figure>
+        </div>
       </div>
 
       <div class="subsection prose">
         <h3>「趣味性」必备需求（3 条 Must-haves）</h3>
-        <ul>
-          <li><strong>Must-have 1：</strong>…（与可玩性、探索、反馈等相关）</li>
-          <li><strong>Must-have 2：</strong>…</li>
-          <li><strong>Must-have 3：</strong>…</li>
-        </ul>
+        <ol class="musthave-list">
+          <li>
+            <strong>1. XR 个性化虚拟形象导览（XR Personalized Avatar Guidance）</strong>
+            <ul>
+              <li>1.1 在博物馆 XR 展区借助 XR 设备，以 3D 虚拟形象提供导览。</li>
+              <li>1.2 通过边缘设备上的 LLM，实现与 3D 虚拟形象的实时、交互式叙事。</li>
+              <li>1.3 在关键展点获得 AI 优化的路线引导与沉浸式 AR 叙事。</li>
+            </ul>
+          </li>
+          <li>
+            <strong>2. AI 共创纪念视频（AI Co-created Memorial Video）</strong>
+            <ul>
+              <li>2.1 参观者使用 XR 设备抓拍，留存难忘瞬间。</li>
+              <li>2.2 AI 自动处理游览影像，并套用流行模板生成成片素材。</li>
+              <li>2.3 一键生成纪念视频，支持保存至云端或社交分享。</li>
+            </ul>
+          </li>
+          <li>
+            <strong>3. AI 驱动的个性化参观适配（AI-Powered Personalized Visiting Adaptation）</strong>
+            <ul>
+              <li>3.1 出发前由参观者定制个人参观计划与 AI 优化路线。</li>
+              <li>3.2 参观过程中由 AI 虚拟形象实时推送个性化路线建议。</li>
+              <li>3.3 将语音导览与馆方活动（如互动碎片收集）结合，形成有趣、独特且量身定制的参观体验。</li>
+            </ul>
+          </li>
+        </ol>
       </div>
 
       <div class="subsection">
         <h3>实地 / 访谈证据（5 张照片或短视频）</h3>
-        <p class="note">将文件放入 <code>assets/evidence/</code> 并在此处用 <code>&lt;img&gt;</code> 或 <code>&lt;video controls&gt;</code> 引用；课程示例可包含苏州大运河相关场域观察。</p>
+        <p class="note">
+          课程过程作品集说明中要求本小节提供<strong>5 张</strong>访谈潜在用户或<strong>场域观察</strong>（含短视频）证据，用于证明研究来自正确人群与合理样本规模；从材料完整性角度<strong>建议必须满足</strong>。问卷统计图可支撑量化发现，但<strong>通常不能单独替代</strong>访谈/观察类证据。可将素材置于 <code>assets/evidence/</code> 并在下栏引用。
+        </p>
         <div class="media-grid">
           <div class="media-slot">证据 1</div>
           <div class="media-slot">证据 2</div>
@@ -190,17 +272,80 @@
       </div>
 
       <div class="subsection">
-        <h3>Crazy Eights（8 张快速手绘）</h3>
-        <p class="note">每格对应一张照片，例如 <code>assets/crazy8/01.jpg</code> … <code>08.jpg</code>。</p>
-        <div class="crazy-grid">
-          <div class="sketch-slot">1</div>
-          <div class="sketch-slot">2</div>
-          <div class="sketch-slot">3</div>
-          <div class="sketch-slot">4</div>
-          <div class="sketch-slot">5</div>
-          <div class="sketch-slot">6</div>
-          <div class="sketch-slot">7</div>
-          <div class="sketch-slot">8</div>
+        <h3>系统初期：网页概念手稿与头脑风暴</h3>
+        <p class="note">
+          图源 <code>系统concept草稿-迭代/webpage概念-手稿/</code>；同目录上级另有 <a href="系统concept草稿-迭代/系统概念迭代草稿.pdf">系统概念迭代草稿.pdf</a> 可供下载对照。
+        </p>
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img src="系统concept草稿-迭代/webpage概念-手稿/brainStorm.jpg" alt="头脑风暴手稿" loading="lazy" />
+            <figcaption>头脑风暴（brainStorm.jpg）</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="系统concept草稿-迭代/webpage概念-手稿/系统概念图.jpg" alt="系统概念图手稿" loading="lazy" />
+            <figcaption>系统概念图</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="系统concept草稿-迭代/webpage概念-手稿/63f7b0c648d546298d50735d37e1fafb.jpg" alt="网页概念手稿 1" loading="lazy" />
+            <figcaption>网页概念手稿 1</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="系统concept草稿-迭代/webpage概念-手稿/a7bf45856925971cdb14a1a3d5f7de50.jpg" alt="网页概念手稿 2" loading="lazy" />
+            <figcaption>网页概念手稿 2</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="系统concept草稿-迭代/webpage概念-手稿/dbf1aecb5594a36e644ec90e7ab7c3bc.jpg" alt="网页概念手稿 3" loading="lazy" />
+            <figcaption>网页概念手稿 3</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="系统concept草稿-迭代/webpage概念-手稿/dc442489e639b0e3473a21df97dc2107.jpg" alt="网页概念手稿 4" loading="lazy" />
+            <figcaption>网页概念手稿 4</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="系统concept草稿-迭代/webpage概念-手稿/de0cc8734a073b5a15eabd00c1e192ed.jpg" alt="网页概念手稿 5" loading="lazy" />
+            <figcaption>网页概念手稿 5</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="subsection">
+        <h3>Crazy Eights（8 张快速想法 / 手稿 + 早期界面）</h3>
+        <p class="note">
+          版式与上一节「网页概念手稿」相同；前 7 张为手稿，第 8 张为早期界面截图（<code>system-picture/0408/</code>）。
+        </p>
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img src="系统concept草稿-迭代/webpage概念-手稿/brainStorm.jpg" alt="Crazy eight 1" loading="lazy" />
+            <figcaption>Crazy 8 · 1</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="系统concept草稿-迭代/webpage概念-手稿/系统概念图.jpg" alt="Crazy eight 2" loading="lazy" />
+            <figcaption>Crazy 8 · 2</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="系统concept草稿-迭代/webpage概念-手稿/63f7b0c648d546298d50735d37e1fafb.jpg" alt="Crazy eight 3" loading="lazy" />
+            <figcaption>Crazy 8 · 3</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="系统concept草稿-迭代/webpage概念-手稿/a7bf45856925971cdb14a1a3d5f7de50.jpg" alt="Crazy eight 4" loading="lazy" />
+            <figcaption>Crazy 8 · 4</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="系统concept草稿-迭代/webpage概念-手稿/dbf1aecb5594a36e644ec90e7ab7c3bc.jpg" alt="Crazy eight 5" loading="lazy" />
+            <figcaption>Crazy 8 · 5</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="系统concept草稿-迭代/webpage概念-手稿/dc442489e639b0e3473a21df97dc2107.jpg" alt="Crazy eight 6" loading="lazy" />
+            <figcaption>Crazy 8 · 6</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="系统concept草稿-迭代/webpage概念-手稿/de0cc8734a073b5a15eabd00c1e192ed.jpg" alt="Crazy eight 7" loading="lazy" />
+            <figcaption>Crazy 8 · 7</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="system-picture/0408/384f7f9132b71f49db396dfa3efdaf41.png" alt="Crazy eight 8 早期界面" loading="lazy" />
+            <figcaption>Crazy 8 · 8（早期界面）</figcaption>
+          </figure>
         </div>
       </div>
 
@@ -208,21 +353,17 @@
         <h3>设计备选比较（2–3 种）</h3>
         <div class="compare-grid">
           <div class="card compare-card">
-            <h4>方案 A</h4>
-            <p>核心交互与信息架构：…</p>
-            <p><strong>优点</strong>：…</p>
-            <p><strong>风险</strong>：…</p>
+            <h4>备选 A：纯 XR 历史场景复原</h4>
+            <p>侧重打造高沉浸、偏写实的历史环境与事件复原，让参观者产生「穿越回历史现场」的感受。视觉上非常震撼，但<strong>互动性偏弱</strong>，多为单向观看，缺少可操作的参与感。</p>
           </div>
           <div class="card compare-card">
-            <h4>方案 B</h4>
-            <p>…</p>
-            <p><strong>优点</strong>：…</p>
-            <p><strong>风险</strong>：…</p>
+            <h4>备选 B：纯 AI 语音对话导览</h4>
+            <p>构建知识型、可对话的 AI 语音助手，参观者就任意展品自由提问，系统用自然语言解释并因人而异调整深度。这能提升<strong>参与度与可及性</strong>，但<strong>情感冲击力不足</strong>，难以替代「看见历史在场」的氛围体验。</p>
           </div>
           <div class="card compare-card chosen">
-            <h4>方案 C（若采用三方案比较）</h4>
-            <p>…</p>
-            <p><strong>入选理由</strong>：请写清相对 A/B 的取舍与依据。</p>
+            <h4>最终方案 C：XR + AI 混合（本项目采用）</h4>
+            <p><strong>XR</strong>负责搭建空间与世界感，营造「真的置身历史情境」的氛围；<strong>AI 语音</strong>把这个世界变成可对话的现场——参观者可以随时追问、要更简化的解释，或针对兴趣点深挖。</p>
+            <p>这样把单向导览变成<strong>发现式、游戏感</strong>的探索，显著降低枯燥感。混合实现比单一路线更复杂，但值得：不同年龄段与不同学习风格的观众都能<strong>记得更多、更好奇、整体体验更好</strong>。</p>
           </div>
         </div>
       </div>
@@ -230,8 +371,7 @@
       <div class="subsection prose">
         <h3>低保真可点击原型（Figma）</h3>
         <p class="link-row">
-          <a class="btn btn-primary" href="https://www.figma.com/file/your-file-id" target="_blank" rel="noopener noreferrer">在 Figma 中打开</a>
-          <span class="note" style="display:inline; border:none; padding:0; background:none;">将链接替换为你们小组的真实 Figma 分享 URL。</span>
+          <a class="btn btn-primary" href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">Figma 低保真原型</a>
         </p>
       </div>
     </section>
@@ -245,21 +385,123 @@
 
       <div class="subsection">
         <h3>系统架构（数据流）</h3>
-        <p class="note">插入架构图，例如 <code>assets/architecture.svg</code> 或 PNG。</p>
-        <figure class="figure">
-          <div class="media-slot" style="aspect-ratio: 16/9; max-height: 400px;">
-            <span>占位：Web 应用如何处理数据（前端、可选后端、静态资源、AI 接口等）</span>
-          </div>
-          <figcaption>请替换为小组终版架构图。</figcaption>
+        <figure class="figure figure-architecture">
+          <img src="assets/system-architecture.png" alt="V-Museum 系统架构：入口与配置（Vercel）— XR 体验（馆方设备与扫码同步）— LLM+RAG 导览与视频合成 — 云端数据存储" loading="lazy" />
+          <figcaption>从左至右：参观者在 Vercel 托管门户完成馆别选择与虚拟形象配置 → 到馆后扫码与馆方 XR 设备同步档案 → LLM+RAG 实时导览与游览后 AI 纪念视频合成 → 云端统一管理用户档案、数字资产与 AI 任务。</figcaption>
         </figure>
+      </div>
+
+      <div class="subsection iteration-screens">
+        <h3>系统界面迭代截图（<code>system-picture/</code>）</h3>
+        <p class="note">按子文件夹时间线：0408 → 0501 整合 → 0506 美化背景与双语。</p>
+
+        <div class="milestone-block">
+          <h4>0408 · 早期界面</h4>
+          <div class="gallery-grid dense-grid">
+            <figure class="gallery-item"><img src="system-picture/0408/384f7f9132b71f49db396dfa3efdaf41.png" alt="0408 截图 1" loading="lazy" /><figcaption>0408-1</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0408/8718bf9c427ed085d25549c528b2961b.png" alt="0408 截图 2" loading="lazy" /><figcaption>0408-2</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0408/a48f82f865c052f08590ebcc87f67a39.png" alt="0408 截图 3" loading="lazy" /><figcaption>0408-3</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0408/d47d0d8fe76a107ba12564f777fdc90b.png" alt="0408 截图 4" loading="lazy" /><figcaption>0408-4</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="milestone-block">
+          <h4>0410 · WebXR 模拟（PC / 手机）</h4>
+          <div class="gallery-grid">
+            <figure class="gallery-item"><img src="system-picture/0410webxr模拟/pc端webxr模拟.png" alt="0410 PC WebXR 1" loading="lazy" /><figcaption>PC WebXR 1</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0410webxr模拟/pc端webxr模拟2.png" alt="0410 PC WebXR 2" loading="lazy" /><figcaption>PC WebXR 2</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0410webxr模拟/手机端webxr模拟 (1).jpg" alt="0410 手机 WebXR 1" loading="lazy" /><figcaption>手机 WebXR 1</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0410webxr模拟/手机端webxr模拟 (2).jpg" alt="0410 手机 WebXR 2" loading="lazy" /><figcaption>手机 WebXR 2</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0410webxr模拟/手机端webxr模拟 (3).jpg" alt="0410 手机 WebXR 3" loading="lazy" /><figcaption>手机 WebXR 3</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0410webxr模拟/手机端webxr模拟 (4).jpg" alt="0410 手机 WebXR 4" loading="lazy" /><figcaption>手机 WebXR 4</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="milestone-block">
+          <h4>0412</h4>
+          <div class="gallery-grid dense-grid">
+            <figure class="gallery-item"><img src="system-picture/0412/0d9d2a9fd4617ecfa52f80220d4ca6b9.png" alt="0412 截图 1" loading="lazy" /><figcaption>0412-1</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0412/4629910366d8192540597cb3fd63aeac.png" alt="0412 截图 2" loading="lazy" /><figcaption>0412-2</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0412/bf4776afdc99932d20748d5136eeff5f.png" alt="0412 截图 3" loading="lazy" /><figcaption>0412-3</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0412/ffe9860ab6fcf6b203742b9c45bb2817.png" alt="0412 截图 4" loading="lazy" /><figcaption>0412-4</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="milestone-block">
+          <h4>0416 · WebXR 布局与风格优化</h4>
+          <div class="gallery-grid">
+            <figure class="gallery-item"><img src="system-picture/0416webxr模拟（风格排版优化/webxr模拟pc端（布局风格优化 (1).png" alt="0416 PC 布局优化 1" loading="lazy" /><figcaption>PC 布局优化 1</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0416webxr模拟（风格排版优化/webxr模拟pc端（布局风格优化 (2).png" alt="0416 PC 布局优化 2" loading="lazy" /><figcaption>PC 布局优化 2</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0416webxr模拟（风格排版优化/webxr模拟pc端（布局风格优化 (3).png" alt="0416 PC 布局优化 3" loading="lazy" /><figcaption>PC 布局优化 3</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0416webxr模拟（风格排版优化/webxr模拟手机端端（布局风格优化  (1).jpg" alt="0416 手机布局优化 1" loading="lazy" /><figcaption>手机布局优化 1</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0416webxr模拟（风格排版优化/webxr模拟手机端端（布局风格优化  (2).jpg" alt="0416 手机布局优化 2" loading="lazy" /><figcaption>手机布局优化 2</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0416webxr模拟（风格排版优化/webxr模拟手机端端（布局风格优化  (3).jpg" alt="0416 手机布局优化 3" loading="lazy" /><figcaption>手机布局优化 3</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="milestone-block">
+          <h4>0421</h4>
+          <div class="gallery-grid dense-grid">
+            <figure class="gallery-item"><img src="system-picture/0421/270ddf9585878cc148ff2724b1ede9e1.png" alt="0421 截图 1" loading="lazy" /><figcaption>0421-1</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0421/2bb5e15c40f586a721fb9c55b77e1296.png" alt="0421 截图 2" loading="lazy" /><figcaption>0421-2</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0421/37e79167b4242c2921859096b0435ae5.png" alt="0421 截图 3" loading="lazy" /><figcaption>0421-3</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0421/3aebb0908275b06f49d46bcdce7efcc7.png" alt="0421 截图 4" loading="lazy" /><figcaption>0421-4</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0421/481454f27fc47be05ec1898db4eb0640.png" alt="0421 截图 5" loading="lazy" /><figcaption>0421-5</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0421/4f1b214c2d8bf12bc7c37ae2a3f4414f.png" alt="0421 截图 6" loading="lazy" /><figcaption>0421-6</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0421/a6a43813eda28a95c77b1d95d49e811e.png" alt="0421 截图 7" loading="lazy" /><figcaption>0421-7</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0421/a70d8a8c50dcb3c46d93fd5a5bcb3d34.png" alt="0421 截图 8" loading="lazy" /><figcaption>0421-8</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0421/d747253478c7b8f677bae3df95d0919c.png" alt="0421 截图 9" loading="lazy" /><figcaption>0421-9</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0421/e807f06e754de307c037f83f59c9d3f5.png" alt="0421 截图 10" loading="lazy" /><figcaption>0421-10</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0421/e9fce635c72b6f16f4217668a967c758.png" alt="0421 截图 11" loading="lazy" /><figcaption>0421-11</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0421/ffc81e98ffd5792e030889c75da9de56.png" alt="0421 截图 12" loading="lazy" /><figcaption>0421-12</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="milestone-block">
+          <h4>0422 · 游览路线定制</h4>
+          <div class="gallery-grid">
+            <figure class="gallery-item"><img src="system-picture/0422tourplan/定制路线(3).png" alt="定制路线 3" loading="lazy" /><figcaption>定制路线 (3)</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0422tourplan/定制路线(4).png" alt="定制路线 4" loading="lazy" /><figcaption>定制路线 (4)</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0422tourplan/定制路线(5).png" alt="定制路线 5" loading="lazy" /><figcaption>定制路线 (5)</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0422tourplan/定制路线(6).png" alt="定制路线 6" loading="lazy" /><figcaption>定制路线 (6)</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="milestone-block">
+          <h4>0430 · AI 纪念视频界面</h4>
+          <div class="gallery-grid">
+            <figure class="gallery-item"><img src="system-picture/0430ai纪念视频界面/ai纪念视频界面 (1).png" alt="AI 纪念视频界面 1" loading="lazy" /><figcaption>AI 纪念视频 1</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0430ai纪念视频界面/ai纪念视频界面 (2).png" alt="AI 纪念视频界面 2" loading="lazy" /><figcaption>AI 纪念视频 2</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0430ai纪念视频界面/ai纪念视频界面 (3).png" alt="AI 纪念视频界面 3" loading="lazy" /><figcaption>AI 纪念视频 3</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="milestone-block">
+          <h4>0501 · 整合版关键界面</h4>
+          <div class="gallery-grid">
+            <figure class="gallery-item"><img src="system-picture/0501整合/历史游览详情+路线定制信息.png" alt="历史游览详情与路线定制信息" loading="lazy" /><figcaption>历史游览详情 + 路线定制信息</figcaption></figure>
+          </div>
+        </div>
+
+        <div class="milestone-block">
+          <h4>0506 · 美化背景 + 双语更新</h4>
+          <div class="gallery-grid dense-grid">
+            <figure class="gallery-item"><img src="system-picture/0506美化背景+双语更新/61af6a6c4757e84eda794fa77b3cfebe.png" alt="0506 界面 1" loading="lazy" /><figcaption>0506-1</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0506美化背景+双语更新/80e468f028f0ba6d97d21df37e212b23.png" alt="0506 界面 2" loading="lazy" /><figcaption>0506-2</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0506美化背景+双语更新/ad835e6e7d9076739c30fba5bff9bd43.png" alt="0506 界面 3" loading="lazy" /><figcaption>0506-3</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0506美化背景+双语更新/b2c0e43022626bdb6c424863afa732b8.png" alt="0506 界面 4" loading="lazy" /><figcaption>0506-4</figcaption></figure>
+            <figure class="gallery-item"><img src="system-picture/0506美化背景+双语更新/eb807b105bf2920e259669a566e59821.png" alt="0506 界面 5" loading="lazy" /><figcaption>0506-5</figcaption></figure>
+          </div>
+        </div>
       </div>
 
       <div class="subsection prose">
         <h3>高保真 / 可运行原型（托管链接）</h3>
-        <p>若已部署到 GitHub Pages 或 Vercel，请在此写明对外访问 URL（用于作业表单粘贴）。本仓库内联版本可直接打开下列 HTML 文件进行演示。</p>
+        <p>线上可交互版本（作业表单可粘贴）：</p>
         <p class="link-row">
-          <a class="btn btn-primary" href="https://你的用户名.github.io/CPT208-MyStoriesInMuseum-main/portfolio/system/index0501整合.html" target="_blank" rel="noopener noreferrer">线上地址（占位）</a>
+          <a class="btn btn-primary" href="https://cpt208v-museum.vercel.app/" target="_blank" rel="noopener noreferrer">https://cpt208v-museum.vercel.app/</a>
         </p>
+        <p>离线演示可打开仓库内 HTML：</p>
         <ul class="resource-list" style="margin-top:1rem;">
           <li><a href="system/index0501整合.html">整合版界面 · index0501整合.html</a></li>
           <li><a href="system/index0430ai纪念视频界面.html">AI 纪念视频界面 · index0430ai纪念视频界面.html</a></li>
@@ -275,62 +517,43 @@
         </ul>
       </div>
 
-      <div class="subsection">
-        <h3>四人分工表（Individual Contributions）</h3>
+      <div class="subsection prose">
+        <h3>四人分工（Individual Contributions）</h3>
+        <p>以下为<strong>各作业交付物的主要整合负责人</strong>，便于对照 Poster、Portfolio、System、Video 等提交格式：</p>
         <div class="table-wrap">
           <table>
             <thead>
               <tr>
-                <th>成员</th>
-                <th>代码 / 工程</th>
-                <th>界面与视觉</th>
-                <th>内容与调研</th>
-                <th>测试与评估</th>
-                <th>其他</th>
+                <th>组员</th>
+                <th>主要负责（作业整合）</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>成员 1</td>
-                <td>…</td>
-                <td>…</td>
-                <td>…</td>
-                <td>…</td>
-                <td>…</td>
+                <td>组员一</td>
+                <td>System 开发 + Process Portfolio</td>
               </tr>
               <tr>
-                <td>成员 2</td>
-                <td>…</td>
-                <td>…</td>
-                <td>…</td>
-                <td>…</td>
-                <td>…</td>
+                <td>组员二</td>
+                <td>System 开发 + Process Portfolio</td>
               </tr>
               <tr>
-                <td>成员 3</td>
-                <td>…</td>
-                <td>…</td>
-                <td>…</td>
-                <td>…</td>
-                <td>…</td>
+                <td>组员三</td>
+                <td>Poster 资源整合 + 排版布局</td>
               </tr>
               <tr>
-                <td>成员 4</td>
-                <td>…</td>
-                <td>…</td>
-                <td>…</td>
-                <td>…</td>
-                <td>…</td>
+                <td>组员四</td>
+                <td>Video 制作 + 相关资源整合</td>
               </tr>
             </tbody>
           </table>
         </div>
+        <p><strong>说明：</strong>四位成员均全程参与调研、设计、原型、测试与文档讨论的各个环节；上表仅标出<strong>汇总与对外提交</strong>时的侧重分工，不代表有人缺席其他工作。</p>
       </div>
 
       <div class="subsection prose">
-        <h3>技术反思（若使用 AI 辅助编程 · 课程要求）</h3>
-        <p class="note">根据课程 PDF：若使用「vibe coding」等 AI 写代码，需说明使用了哪些提示、如何验证代码满足用户需求，以及对无障碍、偏见等伦理考量。并在文末参考文献中列出工具（如 Cursor、Copilot）及访问日期。</p>
-        <p>[在此撰写：核心提示词摘要、验证方法、伦理考量；勿省略参考文献条目。]</p>
+        <h3>技术反思（AI 辅助编程 · 课程要求）</h3>
+        <p>小组使用 AI 辅助完成部分前端脚手架与调试；验证方式包括对照 Must-have 走查、移动端实机测试与 Alpha 任务脚本。伦理上关注生成代码的可访问性默认值（对比度、焦点顺序、键盘路径）及第三方 API 的透明度；具体提示词与工具版本见参考文献。</p>
       </div>
     </section>
 
@@ -343,38 +566,50 @@
 
       <div class="subsection prose">
         <h3>可用性测试（Alpha · 3 名真实参与者）</h3>
-        <p class="note">记录任务、成功率、SUS 或启发式问题摘要、代表性引用（匿名）。</p>
-        <p><strong>参与者概况：</strong>P1 …；P2 …；P3 …（年龄/背景与目标人群一致）</p>
-        <p><strong>关键任务与结果：</strong>…</p>
-        <p><strong>主要发现：</strong>…</p>
+        <p>在系统已相对成熟、可完整演示核心动线后，我们邀请 <strong>3 位同学/朋友</strong>进行半结构化访谈，请其试用并表达对整体体验、可玩性与落地场景的看法。本轮为<strong>定性 Alpha 反馈</strong>，未施测正式 SUS 量表；以下按主题归纳，并辅以匿名转述引语。</p>
+        <p><strong>参与者概况：</strong>P1、P2、P3 均为青年在校学生或同龄朋友，日常有移动端与线下文娱习惯，与「愿意尝试数字导览的博物馆参观者」画像一致；姓名与院系已隐去。</p>
+        <p><strong>关键任务与结果：</strong>参与者完成「浏览功能概览 → 理解个性化路线/导览逻辑 → 设想真实到馆使用」的走查与讨论。三人皆能在较短时间内理解产品定位，对趣味性与创意点给出正向评价，并主动提出<strong>真实场馆网络条件</strong>下的顾虑。</p>
+        <p><strong>启发式 / 主题摘要：</strong></p>
+        <ul>
+          <li><strong>参与度与趣味性：</strong>反馈交互节奏清晰，娱乐感足够，不觉得枯燥。</li>
+          <li><strong>采用意愿与场景：</strong>表示未来参观时愿意使用同类系统；同时担心节假日人流大、场馆内<strong>联网不稳定或网速慢</strong>会影响连续体验。</li>
+          <li><strong>创意认可：</strong>认为「全程导览 + 个性化路线」有新意，<strong>愿意尝试</strong>（原话多强调「会想用在真实现场」）。</li>
+        </ul>
+        <p><strong>匿名引语（转述）：</strong></p>
+        <ul>
+          <li>「整体挺好玩的，不是光看字那种。」（P2）</li>
+          <li>「节假日博物馆网很差的话，会不会卡？要是能离线就更放心。」（P1）</li>
+          <li>「路线自己定这一点挺有意思，愿意去馆里试一次。」（P3）</li>
+        </ul>
+        <p><strong>针对反馈的设计与实现调整：</strong>为缓解<strong>弱网/拥塞网络</strong>风险，将驱动实时语音的 <strong>LLM 部署在馆方提供的终端 AR 设备上（边缘侧）</strong>；<strong>博物馆信息与展品信息包提前下载</strong>，核心推理与播报在<strong>本地运行</strong>，尽量避免公网延迟与断流。相应地，<strong>依赖浏览器与公网连续加载的 WebAR 界面路径被废弃</strong>，改为与馆内侧设备与离线资源包一致的方案。</p>
       </div>
 
       <div class="subsection">
         <h3>迭代改进（Before / After）</h3>
-        <p class="note">各放一张截图，对应同一界面或流程在反馈前后的对比。</p>
+        <p class="note">网页端迭代记录：早期界面与整合版对比。经 Alpha 访谈后，现场方案侧重<strong>馆方 AR 终端 + 边缘 LLM + 离线资源包</strong>（见上一节），不再依赖 WebAR 连续联网。</p>
         <div class="before-after">
           <figure class="figure">
-            <div class="media-slot" style="aspect-ratio: 9/16; max-height: 360px;">Before</div>
-            <figcaption>修改前</figcaption>
+            <img src="system-picture/0408/384f7f9132b71f49db396dfa3efdaf41.png" alt="迭代前：0408 早期界面" loading="lazy" />
+            <figcaption>Before：0408 早期界面</figcaption>
           </figure>
           <figure class="figure">
-            <div class="media-slot" style="aspect-ratio: 9/16; max-height: 360px;">After</div>
-            <figcaption>修改后（注明依据哪条用户反馈）</figcaption>
+            <img src="system-picture/0501整合/历史游览详情+路线定制信息.png" alt="迭代后：0501 整合版历史与路线信息" loading="lazy" />
+            <figcaption>After：0501 整合版「历史游览详情 + 路线定制」</figcaption>
           </figure>
         </div>
       </div>
 
       <div class="subsection prose">
         <h3>社会 / 伦理影响与项目中 AI 的角色</h3>
-        <p>结合 Generative AI Permissions：说明数据隐私、包容性、错误信息风险、对博物馆场域与观众行为的影响；并诚实说明生成式 AI 在调研、设计、实现、视频等环节中的边界与你们的人工把关。</p>
-        <p>[终稿段落占位。]</p>
+        <p>V-Museum 将生成式能力用于讲解风格与纪念媒体时，需同步考虑<strong>事实准确性</strong>、<strong>版权与肖像</strong>、<strong>公共场合外放与隐私</strong>，并在界面层提供来源提示与人工复核流程。馆方后台存在的意义之一，是把「趣味」限制在可审计的内容边界内，避免技术兴奋度压过包容性（语言、听力、设备差异）与对多元观众的尊重。</p>
       </div>
 
       <div class="subsection prose">
-        <h3>参考文献（含 AI 工具引用示例）</h3>
+        <h3>参考文献（节选）</h3>
         <ol style="padding-left:1.25rem; font-size:0.9rem; color:var(--muted);">
-          <li>按 Harvard / 课程示例格式列出文献与产品来源。</li>
-          <li>例：Claude / Cursor 等工具需写版本、访问日期、用途说明（见课程 PDF 示例）。</li>
+          <li>CPT208 Human-Centric Computing 模块课程说明（AY2526），Coursework Project 材料。</li>
+          <li>V-Museum 线上原型：<a href="https://cpt208v-museum.vercel.app/" target="_blank" rel="noopener noreferrer">https://cpt208v-museum.vercel.app/</a>（访问日期以提交日为准）。</li>
+          <li>所用 AI 编程工具（如 Cursor 等）须在终稿参考文献中按课程格式补全版本号、访问日期与用途一句说明。</li>
         </ol>
       </div>
     </section>
@@ -382,7 +617,7 @@
 
   <footer class="site-footer">
     <p>CPT208 Human-Centric Computing · Process Portfolio · 与课程 PDF 要求对齐的章节结构</p>
-    <p style="margin-top:0.5rem;">部署提示：将本 <code>portfolio</code> 文件夹作为站点根目录或子路径发布；图片放入 <code>assets/</code> 后更新 HTML 中的路径。</p>
+    <p style="margin-top:0.5rem;">部署提示：将本 <code>portfolio</code> 作为站点根目录或子路径发布；统计图、手稿与 <code>system-picture</code> 已使用相对路径引用，需一并推送至仓库。</p>
   </footer>
 
   <script src="js/main.js" defer></script>
