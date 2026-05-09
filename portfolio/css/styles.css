@@ -600,6 +600,74 @@ tr:last-child td {
   line-height: 1.35;
 }
 
+/* 用户旅程图：首张全宽大图（便于读小字），下方两张统计图并排、中等尺寸 */
+.journey-map-gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 1.35rem;
+  max-width: 100%;
+}
+
+.journey-map-gallery .gallery-item--journey-hero {
+  width: 100%;
+  max-width: 100%;
+  margin-inline: 0;
+}
+
+.journey-map-gallery .journey-map-hero-link {
+  display: block;
+  line-height: 0;
+  cursor: zoom-in;
+  border-radius: 0;
+  transition: box-shadow 0.15s ease;
+}
+
+.journey-map-gallery .journey-map-hero-link:hover {
+  box-shadow: inset 0 0 0 2px rgba(180, 83, 9, 0.35);
+}
+
+.journey-map-gallery .journey-map-hero-link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.journey-map-gallery .gallery-item--journey-hero img {
+  width: 100%;
+  max-height: none;
+  image-rendering: auto;
+}
+
+.journey-map-gallery .gallery-item--journey-hero figcaption {
+  font-size: 0.85rem;
+  padding: 0.65rem 0.85rem;
+}
+
+.journey-map-stats-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(min(100%, 400px), 1fr));
+  gap: 1.15rem 1.35rem;
+  align-items: start;
+}
+
+.journey-map-stats-row .gallery-item {
+  min-height: 0;
+}
+
+.journey-map-stats-row .gallery-item img {
+  width: 100%;
+}
+
+.journey-map-stats-row .gallery-item figcaption {
+  font-size: 0.82rem;
+  padding: 0.55rem 0.75rem;
+}
+
+@media (max-width: 900px) {
+  .journey-map-stats-row {
+    grid-template-columns: 1fr;
+  }
+}
+
 .gallery-item {
   margin: 0;
   border-radius: var(--radius);
@@ -855,6 +923,4 @@ tr:last-child td {
   .nav-list a {
     padding: 0.55rem 0.5rem;
   }
-}
-
 }
