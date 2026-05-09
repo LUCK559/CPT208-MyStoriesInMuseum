@@ -540,7 +540,7 @@
             <h2 class="text-2xl sm:text-4xl font-bold mb-4 text-zinc-900" data-i18n="flow.successTitle"></h2>
             <div id="plan-feedback-msg" class="bg-amber-50 border border-amber-200 text-amber-800 p-4 rounded-2xl max-w-xl mx-auto mb-8 sm:mb-10 font-bold text-base sm:text-lg"></div>
             <p class="text-zinc-500 text-base sm:text-lg mb-10 sm:mb-12 max-w-xl mx-auto leading-relaxed" data-i18n="flow.successHint"></p>
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-5 max-w-4xl mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 sm:gap-5 max-w-6xl mx-auto">
               <button type="button" onclick="startFormalFlow()" class="p-5 sm:p-6 bg-white border border-zinc-200 rounded-2xl sm:rounded-3xl hover:border-amber-500 transition shadow-sm">
                 <i class="fa-solid fa-museum text-2xl sm:text-3xl mb-3 sm:mb-4 text-amber-500"></i><br><span class="font-bold text-sm sm:text-base" data-i18n="flow.btnNextJourney"></span>
               </button>
@@ -549,6 +549,9 @@
               </button>
               <button type="button" onclick="showFeatureDetail(3)" class="p-5 sm:p-6 bg-white border border-zinc-200 rounded-2xl sm:rounded-3xl hover:border-amber-500 transition shadow-sm">
                 <i class="fa-solid fa-route text-2xl sm:text-3xl mb-3 sm:mb-4 text-amber-500"></i><br><span class="font-bold text-sm sm:text-base" data-i18n="flow.btnTasks"></span>
+              </button>
+              <button type="button" onclick="window.open('vmuseum-ar-simulation.html', '_blank')" class="p-5 sm:p-6 bg-white border border-zinc-200 rounded-2xl sm:rounded-3xl hover:border-amber-500 transition shadow-sm">
+                <i class="fa-solid fa-vr-cardboard text-2xl sm:text-3xl mb-3 sm:mb-4 text-amber-500"></i><br><span class="font-bold text-sm sm:text-base" data-i18n="flow.btnArSimulation"></span>
               </button>
             </div>
             <div class="mt-8 sm:mt-10 flex flex-wrap justify-center items-center gap-4 sm:gap-8 text-sm font-bold text-zinc-500">
@@ -650,7 +653,9 @@
     const museums = [
       { id: 1, name: "苏州博物馆", desc: "吴地文化精华，贝聿铭设计代表作", img: "MuseumSource/苏州博物馆.png", location: "苏州平江路", highlights: "吴门画派、古玉、明清家具", tasks: [{ item: "秘色瓷莲花碗", intro: "寻找五代时期的瓷中极品，观察其如雨后晴天的色彩。", reward: "线上纪念勋章 + 纸质明信片" }, { item: "紫藤园合影", intro: "在贝聿铭亲手选植的紫藤下与虚拟形象合影。", reward: "文创店咖啡 8 折券" }] },
       { id: 2, name: "苏州丝绸博物馆", desc: "千年丝绸之路活化石", img: "MuseumSource/苏州丝绸博物馆.png", location: "苏州南门", highlights: "宋锦、缂丝、刺绣", tasks: [{ item: "缂丝织机", intro: "通过 AR 观察“通经断纬”的织造过程并完成互动问答。", reward: "数字缂丝样本藏品" }, { item: "龙袍展区", intro: "扫描龙袍图案，识别出三处不同的云纹装饰。", reward: "精美桑蚕丝小方巾抽奖券" }] },
-      { id: 3, name: "苏州吴文化博物馆", desc: "时光里的文化摆渡", img: "MuseumSource/苏州吴文化博物馆.png", location: "苏州市吴中区", highlights: "吴文化历史 + 传统工艺", tasks: [{ item: "双塔模型", intro: "利用 AR 还原罗汉院双塔的建造过程。", reward: "虚拟建筑成就徽章" }, { item: "吴王余眜剑", intro: "近距离观察青铜剑铭文并完成拼图游戏。", reward: "吴文化文具套装优惠" }] }
+      { id: 3, name: "苏州吴文化博物馆", desc: "时光里的文化摆渡", img: "MuseumSource/苏州吴文化博物馆.png", location: "苏州市吴中区", highlights: "吴文化历史 + 传统工艺", tasks: [{ item: "双塔模型", intro: "利用 AR 还原罗汉院双塔的建造过程。", reward: "虚拟建筑成就徽章" }, { item: "吴王余眜剑", intro: "近距离观察青铜剑铭文并完成拼图游戏。", reward: "吴文化文具套装优惠" }] },
+      { id: 4, name: "苏州教育博物馆", desc: "江南文教记忆，书院与学堂的缩影", img: "MuseumSource/苏州教育博物馆.png", location: "苏州姑苏区醋库巷", highlights: "科举档案、私塾场景、近代学制", tasks: [{ item: "状元卷轴寻踪", intro: "在 AR 中展开清代状元殿试卷复刻件，完成三处批注点选读。", reward: "数字「金榜题名」纪念卡" }, { item: "私塾课桌互动", intro: "与虚拟先生对坐，跟读一篇蒙学节选并完成声调小游戏。", reward: "教育主题书签套装兑换券" }] },
+      { id: 5, name: "苏州民俗博物馆", desc: "姑苏烟火气，节令与礼俗的活态展陈", img: "MuseumSource/苏州民俗博物馆.png", location: "苏州东北街潘儒巷", highlights: "节令风俗、婚嫁礼俗、民间工艺", tasks: [{ item: "婚俗花轿巡游", intro: "用 AR 复原花轿出巡路线，在展厅地标处打卡并收集三枚喜字贴。", reward: "民俗主题电子贴纸包" }, { item: "岁时节令图谱", intro: "对照展陈找出「冬至」「端午」两处节令器物，完成配对连线。", reward: "非遗手作体验优先预约码" }] }
     ];
 
     const avatars = [
