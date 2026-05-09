@@ -2,6 +2,8 @@
 
 面向博物馆参观场景的静态 Web 原型：参观者工作台、游览计划、AI 纪念影像入口、AR 演示与馆方后台界面等。
 
+**本 README 所在位置**：小组 GitHub 仓库 [`LUCK559/CPT208-MyStoriesInMuseum`](https://github.com/LUCK559/CPT208-MyStoriesInMuseum) 的 **`frontend/` 子目录**（与 `portfolio/`、`activityRecords/` 等并列）。系统源码与静态资源以该子目录为 Web 根目录组织。
+
 ## 在线演示（生产环境）
 
 | 项目 | 说明 |
@@ -18,7 +20,7 @@
 
 ### 1. 项目类型与部署策略
 
-本仓库为 **纯静态前端**（HTML + 内联/外链脚本与样式），无 Node 构建步骤。适合直接部署到 **Vercel**、GitHub Pages、Netlify 等静态托管服务。
+`frontend/` 目录为 **纯静态前端**（HTML + 内联/外链脚本与样式），无 Node 构建步骤。适合直接部署到 **Vercel**、GitHub Pages、Netlify 等静态托管服务。
 
 推荐使用 **Vercel**：与 Git 仓库联动后，每次推送到默认分支可自动触发部署，并自动生成 HTTPS 与预览环境。
 
@@ -26,10 +28,11 @@
 
 #### 方式 A：通过 GitHub 连接（适合小组协作与持续交付）
 
-1. 将本目录（或包含本目录的仓库）推送到 **GitHub** 远程仓库，并确保仓库为 **Public**（或按课程要求对评分方可见）。
-2. 登录 [Vercel Dashboard](https://vercel.com/dashboard)，选择 **Add New… → Project**，导入上述 GitHub 仓库。
+1. 确保小组仓库已推送到 GitHub，并保持 **Public**（或按课程要求对评分方可见）：  
+   [https://github.com/LUCK559/CPT208-MyStoriesInMuseum](https://github.com/LUCK559/CPT208-MyStoriesInMuseum)（默认分支 `main`，前端代码在 [`frontend`](https://github.com/LUCK559/CPT208-MyStoriesInMuseum/tree/main/frontend) 目录）。
+2. 登录 [Vercel Dashboard](https://vercel.com/dashboard)，选择 **Add New… → Project**，导入上述仓库 **LUCK559/CPT208-MyStoriesInMuseum**。
 3. 在 **Configure Project** 中：
-   - **Root Directory**：若仓库根目录即为 `frontend` 内容，保持默认；若前端在子目录 `frontend/`，将 Root Directory 设为 `frontend`。
+   - **Root Directory**：必须设为 **`frontend`**（勿留空为仓库根目录，否则找不到 `index.html`）。点击 **Edit** 选择子目录 `frontend`。
    - **Framework Preset**：选择 **Other**（无框架）。
    - **Build Command**：留空（无需构建）。
    - **Output Directory**：留空或 `.`（将包含 `index.html` 的目录作为站点根目录发布）。
@@ -40,9 +43,10 @@
 #### 方式 B：通过 Vercel CLI
 
 ```bash
+git clone https://github.com/LUCK559/CPT208-MyStoriesInMuseum.git
+cd CPT208-MyStoriesInMuseum/frontend
 npm i -g vercel
-cd frontend
-vercel          # 按提示登录并链接项目
+vercel          # 按提示登录并链接项目；若从仓库根目录执行，需在提示中指定 Root 为 frontend
 vercel --prod   # 推送到生产环境
 ```
 
@@ -56,7 +60,7 @@ vercel --prod   # 推送到生产环境
 
 - **Live URL**：使用上方 Vercel 生产链接提交；保持项目在评分期内 **不暂停、不私有化**。
 - **现代云平台**：Vercel 符合「GitHub Pages、Vercel 等」类要求。
-- **源代码仓库**：在 README 或作业说明中附上 **GitHub 仓库 URL**（由小组仓库实际地址填写）。
+- **源代码仓库**：[LUCK559/CPT208-MyStoriesInMuseum](https://github.com/LUCK559/CPT208-MyStoriesInMuseum)（本系统在其中的 [`frontend/`](https://github.com/LUCK559/CPT208-MyStoriesInMuseum/tree/main/frontend) 子目录）。
 
 ---
 
@@ -64,12 +68,17 @@ vercel --prod   # 推送到生产环境
 
 无需安装依赖即可预览（依赖浏览器访问 CDN）：
 
-1. 克隆或下载本目录到本地。
+1. 克隆小组仓库并进入 `frontend` 目录：
+
+   ```bash
+   git clone https://github.com/LUCK559/CPT208-MyStoriesInMuseum.git
+   cd CPT208-MyStoriesInMuseum/frontend
+   ```
+
 2. 任选一种方式启动本地 HTTP 服务（避免部分浏览器对 `file://` 的限制）：
 
    ```bash
    # Python 3
-   cd frontend
    python -m http.server 8080
    ```
 
@@ -112,11 +121,16 @@ frontend/
 
 ## 小组 GitHub 仓库
 
+| 项目 | 链接 |
+|------|------|
+| **仓库（根目录）** | [https://github.com/LUCK559/CPT208-MyStoriesInMuseum](https://github.com/LUCK559/CPT208-MyStoriesInMuseum) |
+| **默认分支** | [`main`](https://github.com/LUCK559/CPT208-MyStoriesInMuseum/tree/main) |
+| **本系统源码目录** | [`frontend/`](https://github.com/LUCK559/CPT208-MyStoriesInMuseum/tree/main/frontend) |
 
->https://github.com/LUCK559/CPT208-MyStoriesInMuseum
+部署到 Vercel 时，**Root Directory 选 `frontend`**，与上表一致。
 
 ---
 
 ## 许可与课程说明
 
-本项目用于 CPT208 课程作业演示；使用 AI 辅助编码时，请按课程要求在仓库中维护 **`ai logs`**（或课程指定名称）目录，存放生成核心组件时的主要提示词记录。
+本项目用于 CPT208 课程作业演示。小组仓库根目录若已包含 **`ai-logs/`**（AI 使用记录），请以课程要求为准维护；本 `frontend/README.md` 仅描述前端子目录的部署与运行。
