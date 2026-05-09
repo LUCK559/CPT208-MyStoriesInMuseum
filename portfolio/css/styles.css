@@ -281,6 +281,224 @@ main img {
   margin: 0 0 1rem;
 }
 
+.callout {
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
+  margin: 1rem 0;
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
+}
+
+.callout h4 {
+  margin: 0 0 0.6rem;
+  font-size: 1rem;
+  font-family: var(--font-display);
+  color: var(--ink);
+}
+
+.callout p:last-child,
+.callout ul:last-child {
+  margin-bottom: 0;
+}
+
+.callout--insight {
+  background: linear-gradient(135deg, #fffbeb 0%, #fff7ed 100%);
+  border-color: #fcd34d;
+  border-left: 4px solid var(--accent);
+}
+
+.callout--insight h4 {
+  color: var(--accent-dark);
+}
+
+.callout--response {
+  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 55%, #f8fafc 100%);
+  border-color: #86efac;
+  border-left: 4px solid #15803d;
+}
+
+.callout--response h4 {
+  color: #166534;
+}
+
+.interview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 0;
+}
+
+.interview-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.1rem;
+  box-shadow: var(--shadow);
+}
+
+.interview-card h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+  color: var(--accent-dark);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.interview-card .tag {
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #fff;
+  background: var(--accent);
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+}
+
+.interview-card dl {
+  margin: 0;
+  font-size: 0.88rem;
+}
+
+.interview-card dt {
+  font-weight: 600;
+  color: var(--ink);
+  margin-top: 0.5rem;
+}
+
+.interview-card dt:first-of-type {
+  margin-top: 0;
+}
+
+.interview-card dd {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.iteration-callout {
+  margin: 1.25rem 0;
+}
+
+.callout-major {
+  margin: 1.15rem 0;
+  padding: 1.1rem 1.2rem;
+  border-radius: var(--radius);
+  border: 2px solid var(--accent);
+  background: linear-gradient(165deg, #fffbeb 0%, #ffedd5 55%, #fff7ed 100%);
+  box-shadow: 0 14px 40px -22px rgba(180, 83, 9, 0.45);
+}
+
+.callout-major h4 {
+  font-family: var(--font-display);
+  margin: 0 0 0.6rem;
+  font-size: 1.08rem;
+  color: var(--accent-dark);
+  letter-spacing: 0.02em;
+}
+
+.callout-major p {
+  margin: 0 0 0.65rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.callout-major p:last-child {
+  margin-bottom: 0;
+}
+
+.callout-major ul {
+  margin: 0.35rem 0 0;
+  padding-left: 1.2rem;
+}
+
+.callout-major li {
+  margin-bottom: 0.35rem;
+}
+
+.callout-response {
+  border-color: #0f766e;
+  background: linear-gradient(165deg, #f0fdfa 0%, #ccfbf1 45%, #ecfdf5 100%);
+  box-shadow: 0 14px 40px -22px rgba(15, 118, 110, 0.35);
+}
+
+.callout-response h4 {
+  color: #115e59;
+}
+
+.interview-block {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
+  margin-bottom: 1rem;
+  background: var(--card);
+  box-shadow: 0 10px 32px -24px rgba(15, 23, 42, 0.35);
+}
+
+.interview-block:last-of-type {
+  margin-bottom: 0.5rem;
+}
+
+.interview-block h4 {
+  margin: 0 0 0.45rem;
+  font-size: 1rem;
+  color: var(--ink);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.75rem;
+}
+
+.interview-meta {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--muted);
+}
+
+.interview-block dl {
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.interview-block dt {
+  font-weight: 600;
+  color: var(--accent-dark);
+  margin-top: 0.55rem;
+}
+
+.interview-block dt:first-child {
+  margin-top: 0;
+}
+
+.interview-block dd {
+  margin: 0.2rem 0 0;
+  padding: 0;
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+.before-after-rationale {
+  margin-top: 1.25rem;
+  padding: 1rem 1.15rem;
+  border-radius: var(--radius);
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  font-size: 0.92rem;
+  line-height: 1.65;
+}
+
+.before-after-rationale h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.98rem;
+  color: var(--accent-dark);
+}
+
+.before-after-rationale ul {
+  margin: 0.4rem 0 0;
+  padding-left: 1.15rem;
+}
+
 .prose {
   max-width: 52rem;
 }
@@ -637,4 +855,6 @@ tr:last-child td {
   .nav-list a {
     padding: 0.55rem 0.5rem;
   }
+}
+
 }
