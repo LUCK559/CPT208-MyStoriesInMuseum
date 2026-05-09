@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- 保证相对路径始终相对本页所在目录（如 GitHub Pages 须用 …/portfolio/ 或 …/portfolio/index.html 打开） -->
   <base href="./" />
   <title>CPT208 Process Portfolio · My Stories in Museums</title>
   <meta name="description" content="CPT208 人机交互课程过程作品集：动机与研究、用户需求、创意与方案、技术实现、评估与反思。" />
@@ -63,7 +62,6 @@
 
       <div class="subsection">
         <h3>文献与产品差距（The Gap）</h3>
-        <p class="note">课程要求：4 篇学术论文 + 4 个商业产品；每项各写 <strong>3 条优点</strong>与 <strong>3 条不足</strong>（非段落摘要）。下表为结构化模板，<strong>第一行论文 / 第一行产品</strong>已按博物馆数字化常见议题给出写法示例，其余行请替换为你们文献综述中的<strong>真实题名与参考文献</strong>。</p>
         <div class="table-wrap">
           <table>
             <thead>
@@ -75,44 +73,34 @@
             </thead>
             <tbody>
               <tr>
-                <td><strong>论文 1（示例）</strong><br /><small>博物馆移动导览 / 情境学习类研究（请改为正式引用）</small></td>
-                <td>① 强调现场情境与展品锚定，利于迁移到真实参观动线；② 方法论上常结合问卷或日志，便于讨论可用性；③ 对「信息过载」有明确测量或分类。</td>
-                <td>① 较少覆盖<strong>生成式讲解</strong>的事实核查与馆方治理；② 样本有时偏学生或单一馆别，外推需谨慎；③ 对<strong>弱网/节假日拥堵</strong>讨论不足。</td>
+                <td><strong>论文 1</strong><br /><small>Almeshari, Dowell &amp; Nyhan (2020). <em>Museum Mobile Guide Preferences of Different Visitor Personas</em>. <em>J. Comput. Cult. Heritage</em> 14(1), art. 9. DOI: 10.1145/3423186</small></td>
+                <td>① 用少量选择题识别<strong>参观者 persona</strong>，便于做轻量个性化；② 系统比较不同人群对导览媒介、导航、社交等功能偏好，设计启示具体；③ 与 Falk 等经典参观动机分类衔接，利于对齐馆方话语。</td>
+                <td>① 数据来自<strong>单一科技类场馆</strong>问卷，向艺术/历史类博物馆迁移需再验证；② 侧重「偏好」而非<strong>弱网、拥塞</strong>下的行为与放弃率；③ 未讨论<strong>生成式讲解</strong>的事实核查与馆方审核流程。</td>
               </tr>
               <tr>
-                <td><strong>论文 2</strong><br /><small>（作者, 年份 — 题名）</small></td>
-                <td>① … ② … ③ …</td>
-                <td>① … ② … ③ …</td>
+                <td><strong>论文 2</strong><br /><small>Trajkova et al. (2020). <em>Move Your Body: Engaging Museum Visitors with Human-Data Interaction</em>. Proc. ACM CHI. DOI: 10.1145/3313831.3376186</small></td>
+                <td>① 在真实馆舍内比较<strong>多种身体—数据呈现形态</strong>（化身、骨骼、摄像头叠加等），对「趣味 / 参与」有实证；② 关注<strong>驻足时长与互动手势</strong>等可观测行为指标；③ 为「具身 + 数据叙事」类展项提供可复用的实验范式。</td>
+                <td>① 聚焦<strong>固定装置</strong>而非参观者自带手机的全馆动线；② 对<strong>无障碍与多元身体能力</strong>的讨论需额外设计才能泛化；③ 与<strong>个性化路线、展后纪念媒介</strong>等产品闭环衔接较弱。</td>
               </tr>
               <tr>
-                <td><strong>论文 3</strong><br /><small>（作者, 年份 — 题名）</small></td>
-                <td>① … ② … ③ …</td>
-                <td>① … ② … ③ …</td>
+                <td><strong>论文 3</strong><br /><small>Roussou &amp; Katifori (2018). <em>Flow, Staging, Wayfinding, Personalization: Evaluating User Experience with Mobile Museum Narratives</em>. <em>Multimodal Technol. Interact.</em> 2(2), 32. DOI: 10.3390/mti2020032</small></td>
+                <td>① 在<strong>雅典卫城博物馆</strong>现场迭代评估移动叙事原型，情境真实；② 组合<strong>民族志观察、访谈、问卷与日志</strong>，对 UX 维度拆解细（情节、动线、个性化等）；③ 样本量较大（文内报告多轮研究），对「叙事型移动导览」有参考价值。</td>
+                <td>① 高度依赖<strong>定制内容与策展协作</strong>，复制到其他馆成本高；② 仍以<strong>预编故事与规则型个性化</strong>为主，未覆盖大模型时代的开放对话风险；③ 对<strong>节假日极端客流与网络策略</strong>着墨有限。</td>
               </tr>
               <tr>
-                <td><strong>论文 4</strong><br /><small>（作者, 年份 — 题名）</small></td>
-                <td>① … ② … ③ …</td>
-                <td>① … ② … ③ …</td>
+                <td><strong>产品 1</strong><br /><small>British Museum Audio app（大英博物馆官方音频导览应用）</small></td>
+                <td>① 专家撰写讲解，<strong>内容权威</strong>且与馆藏编号体系对齐；② 多语言与主题线路丰富，适合国际观众；③ 含地图、高亮展品与部分<strong>多媒体/3D</strong>增强，信息层次清晰。</td>
+                <td>① <strong>付费组合</strong>可能提高使用门槛；② 仍以「收听既定讲解」为主，<strong>个性化叙事与共创</strong>空间有限；③ 重度依赖手机与耳机体验，与本项目设想的<strong>馆侧 XR + 边缘 LLM</strong>协同不在同一产品形态。</td>
               </tr>
               <tr>
-                <td><strong>产品 1（示例）</strong><br /><small>主流博物馆 App / 音频导览类产品（请改为具体产品名）</small></td>
-                <td>① 内容权威、更新流程相对成熟；② 基础无障碍（字号/语言）较完善；③ 路线与地图易理解。</td>
-                <td>① <strong>个性化与玩法感</strong>偏弱，难形成「我的故事」闭环；② 现场 AR/AI 能力依赖网络与设备；③ 用户共创与展后纪念媒介有限。</td>
+                <td><strong>产品 2</strong><br /><small>My Visit to the Louvre / Louvre : ma visite（卢浮宫官方参观应用）</small></td>
+                <td>① <strong>大体量场馆导航</strong>（室内地图、推荐动线）成熟，降低迷路成本；② 文本与可选购<strong>音频包</strong>覆盖主要展厅，利于自助节奏；③ 支持<strong>行前规划与收藏</strong>，与「我的参观计划」类需求接近。</td>
+                <td>① 深度讲解多依赖<strong>内购</strong>，完整体验成本偏高；② 「玩法感」与<strong>AI 实时对话、纪念视频共创</strong>等能力并非其核心；③ 仍以<strong>公网内容分发</strong>为主思路，对馆内弱网需依赖用户自行下载或现场网络质量。</td>
               </tr>
               <tr>
-                <td><strong>产品 2</strong><br /><small>（产品名）</small></td>
-                <td>① … ② … ③ …</td>
-                <td>① … ② … ③ …</td>
-              </tr>
-              <tr>
-                <td><strong>产品 3</strong><br /><small>（产品名）</small></td>
-                <td>① … ② … ③ …</td>
-                <td>① … ② … ③ …</td>
-              </tr>
-              <tr>
-                <td><strong>产品 4</strong><br /><small>（产品名）</small></td>
-                <td>① … ② … ③ …</td>
-                <td>① … ② … ③ …</td>
+                <td><strong>产品 3</strong><br /><small>Bloomberg Connects（「Connects: Arts &amp; Culture」多馆导览平台）</small></td>
+                <td>① <strong>免费、跨馆</strong>聚合大量机构内容，降低初次尝试门槛；② 支持<strong>离线下载</strong>导览，缓解馆内网络不稳；③ 内置<strong>字幕、字体、旁白</strong>等无障碍选项覆盖面较广。</td>
+                <td>① 各馆内容由合作方维护，<strong>深度与风格参差</strong>，难以保证一致的「故事化」体验；② 平台型产品偏<strong>媒体消费</strong>，缺少馆方后台与本项目类似的<strong>治理与审核闭环</strong>叙事；③ 与<strong>3D 虚拟人实时导览、边缘 LLM</strong>的一体化方案仍需馆方二次集成。</td>
               </tr>
             </tbody>
           </table>
@@ -121,13 +109,10 @@
 
       <div class="subsection">
         <h3>背景调查：问卷统计与数据可视化</h3>
-        <p class="note">
-          图源：<code>背景调查-博物馆aixr/调查-统计图/统计图/</code> 及同目录上级补充图表。
-        </p>
         <div class="gallery-grid survey-gallery">
           <figure class="gallery-item">
             <img src="%E8%83%8C%E6%99%AF%E8%B0%83%E6%9F%A5-%E5%8D%9A%E7%89%A9%E9%A6%86aixr/01dbc0d42c4b84416c8b9daf2dd0f4f9.png" alt="背景调查补充统计图" loading="lazy" />
-            <figcaption>补充统计图（<code>背景调查-博物馆aixr/</code>）</figcaption>
+            <figcaption>补充统计图</figcaption>
           </figure>
           <figure class="gallery-item">
             <img src="%E8%83%8C%E6%99%AF%E8%B0%83%E6%9F%A5-%E5%8D%9A%E7%89%A9%E9%A6%86aixr/%E8%B0%83%E6%9F%A5-%E7%BB%9F%E8%AE%A1%E5%9B%BE/%E7%BB%9F%E8%AE%A1%E5%9B%BE/%E7%97%9B%E7%82%B9.png" alt="用户痛点统计" loading="lazy" />
@@ -209,16 +194,22 @@
 
       <div class="subsection">
         <h3>用户旅程图与痛点（User Journey Map）</h3>
-        <p class="note">下列为问卷中的痛点维度可视化，可与独立绘制的旅程图并列使用。</p>
-        <div class="gallery-grid survey-gallery">
-          <figure class="gallery-item">
-            <img src="%E8%83%8C%E6%99%AF%E8%B0%83%E6%9F%A5-%E5%8D%9A%E7%89%A9%E9%A6%86aixr/%E8%B0%83%E6%9F%A5-%E7%BB%9F%E8%AE%A1%E5%9B%BE/%E7%BB%9F%E8%AE%A1%E5%9B%BE/%E7%97%9B%E7%82%B9.png" alt="问卷：观展痛点分布" loading="lazy" />
-            <figcaption>痛点分布（支撑旅程中的「受挫/信息不足」等阶段）</figcaption>
+        <p class="note">首张为<strong>用户痛点旅程图</strong>（占满栏宽、可点击放大查看小字）；其后为问卷中的痛点维度可视化，可与独立绘制的旅程图并列使用。</p>
+        <div class="journey-map-gallery">
+          <figure class="gallery-item gallery-item--journey-hero">
+            <a class="journey-map-hero-link" href="%E8%83%8C%E6%99%AF%E8%B0%83%E6%9F%A5-%E5%8D%9A%E7%89%A9%E9%A6%86aixr/%E8%B0%83%E6%9F%A5-%E7%BB%9F%E8%AE%A1%E5%9B%BE/%E7%BB%9F%E8%AE%A1%E5%9B%BE/%E7%94%A8%E6%88%B7%E7%97%9B%E7%82%B9%E8%B7%AF%E7%A8%8B%E5%9B%BE.png" target="_blank" rel="noopener noreferrer" title="在新标签页打开原图，便于阅读小字"><img src="%E8%83%8C%E6%99%AF%E8%B0%83%E6%9F%A5-%E5%8D%9A%E7%89%A9%E9%A6%86aixr/%E8%B0%83%E6%9F%A5-%E7%BB%9F%E8%AE%A1%E5%9B%BE/%E7%BB%9F%E8%AE%A1%E5%9B%BE/%E7%94%A8%E6%88%B7%E7%97%9B%E7%82%B9%E8%B7%AF%E7%A8%8B%E5%9B%BE.png" alt="用户旅程图与痛点：用户痛点路程图" loading="lazy" /></a>
+            <figcaption>用户痛点旅程图（User Journey Map）· 点击图片可在新标签页查看原尺寸</figcaption>
           </figure>
-          <figure class="gallery-item">
-            <img src="%E8%83%8C%E6%99%AF%E8%B0%83%E6%9F%A5-%E5%8D%9A%E7%89%A9%E9%A6%86aixr/%E8%B0%83%E6%9F%A5-%E7%BB%9F%E8%AE%A1%E5%9B%BE/%E7%BB%9F%E8%AE%A1%E5%9B%BE/%E5%BD%93%E5%89%8D%E7%97%9B%E7%82%B92.png" alt="问卷：当前痛点 2" loading="lazy" />
-            <figcaption>当前痛点（补充维度）</figcaption>
-          </figure>
+          <div class="journey-map-stats-row">
+            <figure class="gallery-item">
+              <img src="%E8%83%8C%E6%99%AF%E8%B0%83%E6%9F%A5-%E5%8D%9A%E7%89%A9%E9%A6%86aixr/%E8%B0%83%E6%9F%A5-%E7%BB%9F%E8%AE%A1%E5%9B%BE/%E7%BB%9F%E8%AE%A1%E5%9B%BE/%E7%97%9B%E7%82%B9.png" alt="问卷：观展痛点分布" loading="lazy" />
+              <figcaption>痛点分布（支撑旅程中的「受挫/信息不足」等阶段）</figcaption>
+            </figure>
+            <figure class="gallery-item">
+              <img src="%E8%83%8C%E6%99%AF%E8%B0%83%E6%9F%A5-%E5%8D%9A%E7%89%A9%E9%A6%86aixr/%E8%B0%83%E6%9F%A5-%E7%BB%9F%E8%AE%A1%E5%9B%BE/%E7%BB%9F%E8%AE%A1%E5%9B%BE/%E5%BD%93%E5%89%8D%E7%97%9B%E7%82%B92.png" alt="问卷：当前痛点 2" loading="lazy" />
+              <figcaption>当前痛点（补充维度）</figcaption>
+            </figure>
+          </div>
         </div>
       </div>
 
@@ -254,13 +245,10 @@
 
       <div class="subsection">
         <h3>实地 / 访谈证据（Evidence of Life · 5 张图或短视频）</h3>
-        <p class="note">
-          课程要求：展示小组<strong>访谈潜在用户</strong>或<strong>场域观察</strong>（如大运河 / 博物馆现场）的 5 张照片或短视频，以证明数据来自<strong>合适人群</strong>与<strong>合理样本</strong>。请将文件命名为 <code>01.jpg</code>…<code>05.jpg</code>（或 <code>.mp4</code>）放入 <code>assets/evidence/</code>；若暂未上传，下栏将显示占位。
-        </p>
         <div class="media-grid">
           <figure class="gallery-item" style="margin:0;">
             <img src="assets/evidence/01.jpg" alt="证据 1：访谈或场域观察" loading="lazy" />
-            <figcaption style="font-size:0.72rem;">证据 1 · <code>assets/evidence/01.jpg</code></figcaption>
+            <figcaption style="font-size:0.72rem;">证据 1</figcaption>
           </figure>
           <figure class="gallery-item" style="margin:0;">
             <img src="assets/evidence/02.jpg" alt="证据 2" loading="lazy" />
@@ -276,13 +264,13 @@
           </figure>
           <figure class="gallery-item" style="margin:0;">
             <img src="assets/evidence/05.jpg" alt="证据 5" loading="lazy" />
-            <figcaption style="font-size:0.72rem;">证据 5 · 可用 <code>.mp4</code> 时改为 <code>&lt;video controls&gt;</code></figcaption>
+            <figcaption style="font-size:0.72rem;">证据 5</figcaption>
           </figure>
         </div>
       </div>
 
       <div class="subsection prose">
-        <h3>数据收集、样本与分析方法（呼应课程 LO 4–5）</h3>
+        <h3>数据收集、样本与分析方法</h3>
         <p><strong>定量：</strong>通过线上/线下问卷收集参观者动机、痛点与对 AI/AR 辅助观展的态度（统计图见本节与「动机与研究」图库）；样本为对博物馆有兴趣的<strong>青年及一般成年参观者</strong>，具体回收量与筛选标准见组内问卷文档 / <code>问卷结果.pdf</code>。</p>
         <p><strong>定性：</strong>Alpha 阶段对 <strong>3 名</strong>同龄用户进行半结构化访谈与走查，聚焦「趣味性、可理解性、到馆网络顾虑」；发现经主题归纳后驱动架构调整（见「评估与反思」）。</p>
         <p><strong>分析：</strong>问卷结果支撑旅程痛点与 Must-have 优先级；访谈结果与启发式观察共同指向<strong>弱网可用性</strong>与<strong>离线/边缘推理</strong>的设计含义。</p>
@@ -298,8 +286,8 @@
 
       <div class="subsection">
         <h3>系统初期：网页概念手稿与头脑风暴</h3>
-        <p class="note">
-          图源 <code>系统concept草稿-迭代/webpage概念-手稿/</code>；同目录上级另有 <a href="%E7%B3%BB%E7%BB%9Fconcept%E8%8D%89%E7%A8%BF-%E8%BF%AD%E4%BB%A3/%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%BF%AD%E4%BB%A3%E8%8D%89%E7%A8%BF.pdf">系统概念迭代草稿.pdf</a> 可供下载对照。
+        <p class="link-row" style="margin-bottom:1rem;">
+          <a class="btn btn-ghost" href="%E7%B3%BB%E7%BB%9Fconcept%E8%8D%89%E7%A8%BF-%E8%BF%AD%E4%BB%A3/%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5%E8%BF%AD%E4%BB%A3%E8%8D%89%E7%A8%BF.pdf">系统概念迭代草稿.pdf</a>
         </p>
         <div class="gallery-grid">
           <figure class="gallery-item">
@@ -335,9 +323,6 @@
 
       <div class="subsection">
         <h3>Crazy Eights（8 张快速想法 / 手稿 + 早期界面）</h3>
-        <p class="note">
-          版式与上一节「网页概念手稿」相同；前 7 张为手稿，第 8 张为早期界面截图（<code>system-picture/0408/</code>）。
-        </p>
         <div class="gallery-grid">
           <figure class="gallery-item">
             <img src="%E7%B3%BB%E7%BB%9Fconcept%E8%8D%89%E7%A8%BF-%E8%BF%AD%E4%BB%A3/webpage%E6%A6%82%E5%BF%B5-%E6%89%8B%E7%A8%BF/brainStorm.jpg" alt="Crazy eight 1" loading="lazy" />
@@ -396,7 +381,7 @@
       <div class="subsection prose">
         <h3>低保真可点击原型（Figma）</h3>
         <p class="link-row">
-          <a class="btn btn-primary" href="https://www.figma.com/" target="_blank" rel="noopener noreferrer">Figma 低保真原型</a>
+          <a class="btn btn-primary" href="https://cpt-208-my-stories-in-museum.vercel.app/" target="_blank" rel="noopener noreferrer">Figma 低保真原型</a>
         </p>
       </div>
     </section>
@@ -418,7 +403,6 @@
 
       <div class="subsection iteration-screens">
         <h3>系统界面迭代截图（<code>system-picture/</code>）</h3>
-        <p class="note">按子文件夹时间线：0408 → 0501 整合 → 0506 美化背景与双语。</p>
 
         <div class="milestone-block">
           <h4>0408 · 早期界面</h4>
@@ -577,7 +561,7 @@
       </div>
 
       <div class="subsection prose">
-        <h3>技术反思（AI 辅助编程 · 课程要求）</h3>
+        <h3>技术反思（AI 辅助编程）</h3>
         <p>小组使用 AI 辅助完成部分前端脚手架与调试；验证方式包括对照 Must-have 走查、移动端实机测试与 Alpha 任务脚本。伦理上关注生成代码的可访问性默认值（对比度、焦点顺序、键盘路径）及第三方 API 的透明度；具体提示词与工具版本见参考文献。</p>
       </div>
     </section>
@@ -672,12 +656,12 @@
         </div>
         <div class="before-after">
           <figure class="figure">
-            <img src="system-picture/0408/384f7f9132b71f49db396dfa3efdaf41.png" alt="迭代前：0408 早期界面" loading="lazy" />
-            <figcaption><strong>Before</strong> · 0408：功能区块较分散，弱网假设不充分</figcaption>
+            <img src="%E5%8F%8D%E7%94%A8%E6%88%B7%E9%A6%88%E5%AF%B9%E6%AF%94%E5%9B%BE%E7%89%87/%E5%89%8D.png" alt="迭代前：根据用户反馈对比（Before）" loading="lazy" />
+            <figcaption><strong>Before</strong> · 反用户馈对比图片 / 前.png</figcaption>
           </figure>
           <figure class="figure">
-            <img src="system-picture/0501%E6%95%B4%E5%90%88/%E5%8E%86%E5%8F%B2%E6%B8%B8%E8%A7%88%E8%AF%A6%E6%83%85%2B%E8%B7%AF%E7%BA%BF%E5%AE%9A%E5%88%B6%E4%BF%A1%E6%81%AF.png" alt="迭代后：0501 整合版历史与路线信息" loading="lazy" />
-            <figcaption><strong>After</strong> · 0501：历史游览与路线定制信息整合，更贴近「到馆怎么走」心智模型</figcaption>
+            <img src="%E5%8F%8D%E7%94%A8%E6%88%B7%E9%A6%88%E5%AF%B9%E6%AF%94%E5%9B%BE%E7%89%87/%E6%94%B9%E5%90%8E.png" alt="迭代后：根据用户反馈对比（After）" loading="lazy" />
+            <figcaption><strong>After</strong> · 反用户馈对比图片 / 改后.png</figcaption>
           </figure>
         </div>
         <div class="before-after-rationale">
@@ -693,7 +677,7 @@
       <div class="subsection prose">
         <h3>社会 / 伦理影响与项目中 AI 的角色（Final Reflection）</h3>
         <p>V-Museum 将生成式能力用于讲解风格与纪念媒体时，必须同步治理<strong>事实准确性</strong>（与策展文本对齐、敏感表述审核）、<strong>版权与肖像</strong>（合影与 AI 再创作边界）、以及<strong>公共场合的外放与隐私</strong>（旁听到他人讲解、摄像头取景范围）。馆方后台的意义在于把「好玩」限制在<strong>可审计的内容边界</strong>内，避免技术兴奋度压过包容性（语言、听力、设备差异）与对多元观众的尊重。</p>
-        <p><strong>生成式 AI 在本项目中的使用（供课程 Generative AI Permissions 对照）：</strong>小组将 AI 用于<strong>代码脚手架、文案润色、可视化草图变体</strong>等辅助环节；需求、访谈结论、架构取舍与测试记录以<strong>人工核对</strong>为准。我们刻意保留「哪些句子来自模型建议、哪些来自用户原话」的区分习惯，并在终稿参考文献中列出工具与访问日期。风险在于模型「听起来合理」的表述可能掩盖未验证假设 — 缓解方式包括<strong>引述真实参与者原话、保留 Before/After 与设计备选对照、对弱网策略做显式工程承诺</strong>而非仅营销话术。</p>
+        <p><strong>生成式 AI 在本项目中的使用：</strong>小组将 AI 用于<strong>代码脚手架、文案润色、可视化草图变体</strong>等辅助环节；需求、访谈结论、架构取舍与测试记录以<strong>人工核对</strong>为准。我们刻意区分模型建议与用户原话，并在参考文献中列出工具与访问日期。风险在于模型「听起来合理」的表述可能掩盖未验证假设 — 缓解方式包括<strong>引述真实参与者原话、保留 Before/After 与设计备选对照、对弱网策略做显式工程承诺</strong>而非仅营销话术。</p>
       </div>
 
       <div class="subsection prose">
@@ -701,15 +685,14 @@
         <ol style="padding-left:1.25rem; font-size:0.9rem; color:var(--muted);">
           <li>CPT208 Human-Centric Computing 模块课程说明（AY2526），Coursework Project 材料。</li>
           <li>V-Museum 线上原型：<a href="https://cpt208v-museum.vercel.app/" target="_blank" rel="noopener noreferrer">https://cpt208v-museum.vercel.app/</a>（访问日期以提交日为准）。</li>
-          <li>所用 AI 编程工具（如 Cursor 等）须在终稿参考文献中按课程格式补全版本号、访问日期与用途一句说明。</li>
+          <li>所用 AI 编程工具（如 Cursor 等）在参考文献中补全版本号、访问日期与用途说明。</li>
         </ol>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
-    <p>CPT208 Human-Centric Computing · Process Portfolio · 与课程 PDF 要求对齐的章节结构</p>
-    <p style="margin-top:0.5rem;">部署提示：将本 <code>portfolio</code> 作为站点根目录或子路径发布；统计图、手稿与 <code>system-picture</code> 已使用相对路径引用，需一并推送至仓库。</p>
+    <p>CPT208 Human-Centric Computing · Process Portfolio · V-Museum</p>
   </footer>
 
   <script src="js/main.js" defer></script>
