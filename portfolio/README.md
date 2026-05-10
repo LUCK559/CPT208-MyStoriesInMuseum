@@ -17,7 +17,7 @@
 
 高保真 Web 原型单独部署在 Vercel，便于走查与录屏：
 
-**https://cpt208v-museum.vercel.app/**
+**[https://cpt208v-museum.vercel.app/](https://v-museum-portfolio.vercel.app/)**
 
 （与 Portfolio 为不同交付物：Portfolio 记录过程；System 为可交互实现。）
 
