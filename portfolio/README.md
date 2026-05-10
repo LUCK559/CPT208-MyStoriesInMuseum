@@ -9,7 +9,7 @@
 
 课程材料建议过程作品集以 **GitHub Pages** 等形式托管。本仓库根目录 README 中登记的 **小组公开页面** 为：
 
-**https://luck559.github.io/CPT208-MyStoriesInMuseum/**
+**https://v-museum-portfolio.vercel.app/**
 
 请在本机或浏览器中确认：上述地址打开的是否为本 Portfolio 的 `index.html`。若 GitHub Pages 当前指向仓库内其他入口（例如系统主站），请将 Pages 的发布根目录或子路径调整为包含本 `portfolio/index.html` 的配置，或在此处更新为 **实际可访问的过程作品集 URL**（提交 Learning Mall / 表单时务必填写最终有效链接）。
 
@@ -17,7 +17,7 @@
 
 高保真 Web 原型单独部署在 Vercel，便于走查与录屏：
 
-**[https://cpt208v-museum.vercel.app/](https://v-museum-portfolio.vercel.app/)**
+**https://cpt208v-museum.vercel.app/**
 
 （与 Portfolio 为不同交付物：Portfolio 记录过程；System 为可交互实现。）
 
