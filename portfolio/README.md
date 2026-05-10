@@ -5,11 +5,16 @@
 - **入口文件**：`index.html`（样式 `css/styles.css`，交互 `js/main.js`）
 - **离线原型与素材**：`system/`、`system-picture/`、`videoResources/` 等子目录为作业交付支撑材料，可在文中链接打开或本地浏览。
 
+## GitHub 仓库
+
+- **完整项目仓库**：[https://github.com/LUCK559/CPT208-MyStoriesInMuseum](https://github.com/LUCK559/CPT208-MyStoriesInMuseum)
+- **过程作品集目录（本 `portfolio` 文件夹）**：[https://github.com/LUCK559/CPT208-MyStoriesInMuseum/tree/main/portfolio](https://github.com/LUCK559/CPT208-MyStoriesInMuseum/tree/main/portfolio)
+
 ## 托管网页链接（线上阅读）
 
 课程材料建议过程作品集以 **GitHub Pages** 等形式托管。本仓库根目录 README 中登记的 **小组公开页面** 为：
 
-**https://v-museum-portfolio.vercel.app/**
+**https://luck559.github.io/CPT208-MyStoriesInMuseum/**
 
 请在本机或浏览器中确认：上述地址打开的是否为本 Portfolio 的 `index.html`。若 GitHub Pages 当前指向仓库内其他入口（例如系统主站），请将 Pages 的发布根目录或子路径调整为包含本 `portfolio/index.html` 的配置，或在此处更新为 **实际可访问的过程作品集 URL**（提交 Learning Mall / 表单时务必填写最终有效链接）。
 
