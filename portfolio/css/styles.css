@@ -148,23 +148,76 @@ a:hover {
   background: var(--accent-soft);
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
-  margin-bottom: 1rem;
+  margin-bottom: 0.65rem;
+}
+
+.hero-project-name {
+  margin: 0 0 0.5rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 3.2vw, 1.85rem);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  line-height: 1.2;
 }
 
 .hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(1.85rem, 4vw, 2.65rem);
+  font-size: clamp(1.65rem, 3.5vw, 2.35rem);
   font-weight: 600;
   line-height: 1.2;
   margin: 0 0 1rem;
   color: var(--ink);
 }
 
+h3 .heading-gloss {
+  font-family: var(--font);
+  font-size: 0.72em;
+  font-weight: 500;
+  color: var(--muted);
+}
+
 .hero-lead {
   font-size: 1.05rem;
   color: var(--muted);
   max-width: 38rem;
-  margin: 0 0 1.5rem;
+  margin: 0 0 1rem;
+}
+
+.hero-repo-links {
+  font-size: 0.88rem;
+  color: var(--muted);
+  max-width: 42rem;
+  margin: 0 0 1.25rem;
+  line-height: 1.55;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 0.65rem;
+}
+
+.hero-repo-links a {
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.hero-repo-links a:hover {
+  color: var(--accent-dark);
+}
+
+.hero-repo-links code {
+  font-size: 0.9em;
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  background: rgba(15, 23, 42, 0.06);
+}
+
+.hero-repo-links__sep {
+  color: var(--line);
+  user-select: none;
 }
 
 .hero-actions {
